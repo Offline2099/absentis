@@ -1,1 +1,156 @@
-<p>article works!</p>
+<div class="column">
+
+  @if (article(); as article) {
+
+    <!-- Header -->
+    <hgroup>
+      <div>{{ article.caption }}</div>
+      <h2>{{ article.title }}</h2>
+    </hgroup>
+
+    <!-- Article Elements -->
+    @for (element of article.content; track $index) {
+      @switch (element.type) {
+
+        <!-- Paragraph -->
+        @case (ArticleElement.paragraph) {
+          <p>
+            <ng-template 
+              [ngTemplateOutlet]="text" 
+              [ngTemplateOutletContext]="{ content: element.content }" 
+            />
+          </p>
+        }
+
+        <!-- Quote -->
+        @case (ArticleElement.quote || ArticleElement.epigraph) {
+          <blockquote class="quote">
+            @for (part of element.content; track $index) {
+              <div>
+                <ng-template 
+                  [ngTemplateOutlet]="text" 
+                  [ngTemplateOutletContext]="{ content: part }" 
+                />
+              </div>
+            }
+            @if (element.author) {
+              <div class="author">
+                <ng-template 
+                  [ngTemplateOutlet]="text" 
+                  [ngTemplateOutletContext]="{ content: element.author }" 
+                />
+              </div>
+            }
+          </blockquote>
+        }
+
+        <!-- Epigraph -->
+        @case (ArticleElement.epigraph) {
+          <blockquote class="epigraph">
+            @for (part of element.content; track $index) {
+              <div>
+                <ng-template 
+                  [ngTemplateOutlet]="text" 
+                  [ngTemplateOutletContext]="{ content: part }" 
+                />
+              </div>
+            }
+            @if (element.author) {
+              <div class="author">
+                <ng-template 
+                  [ngTemplateOutlet]="text" 
+                  [ngTemplateOutletContext]="{ content: element.author }" 
+                />
+              </div>
+            }
+          </blockquote>
+        }
+
+        <!-- Image -->
+        @case (ArticleElement.image) {
+          <figure 
+            [ngClass]="{ 
+              'to-left': element.position === ImagePosition.left,
+              'to-right': element.position === ImagePosition.right
+            }">
+            <img [src]="element.url" [alt]="element.alt || ''" />
+            @if (element.caption) {
+              <figcaption>
+                <ng-template 
+                  [ngTemplateOutlet]="text" 
+                  [ngTemplateOutletContext]="{ content: element.caption }" 
+                />
+              </figcaption>
+            }
+            
+          </figure>
+        }
+
+        <!-- Video -->
+        @case (ArticleElement.video) {
+          <div class="video-container">
+            <iframe
+              width="560"
+              height="315"
+              [src]="videoURL()[element.url]"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+            @if (element.caption) {
+              <caption>
+                <ng-template 
+                  [ngTemplateOutlet]="text" 
+                  [ngTemplateOutletContext]="{ content: element.caption }" 
+                />
+              </caption>
+            }
+          </div>
+        }
+
+        <!-- Separator -->
+        @case (ArticleElement.separator) {
+          <div class="separator">***</div>
+        }
+
+        <!-- References -->
+        @case (ArticleElement.referenceList) {
+          <ol class="reference-list">
+            @for (reference of element.content; track reference.id) {
+              <li id="reference-{{ reference.id }}">
+                <ng-template 
+                  [ngTemplateOutlet]="text" 
+                  [ngTemplateOutletContext]="{ content: reference.content }" 
+                /> 
+              </li>
+            }
+          </ol>
+        }
+      }
+    }
+  }
+  
+
+</div>
+
+<!-- Template: Text -->
+<ng-template #text let-content="content">
+  @for (element of content; track $index) {
+    @if (typeof element === 'string') {
+      {{ element }}
+    } @else {
+      @switch (element.type) {
+        @case (InlineElement.link) {
+          <a [href]="element.url" target="_blank">{{ element.text }}</a>
+        }
+        @case (InlineElement.reference) {
+          <sup>
+            <a [routerLink]="[]" fragment="reference-{{ element.id }}">[{{ element.id }}]</a>
+          </sup>
+        }
+      }
+    }
+  }
+</ng-template>

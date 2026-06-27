@@ -1,0 +1,31 @@
+:host {
+  width: 100%;
+  padding-top: 50px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: min(1000px, 100% - 20px);
+  height: 100%;
+  margin: 0 auto;
+  background-color: #111;
+}
+
+.book-data-container {
+  display: flex;
+  gap: 15px;
+  img {
+    display: block;
+    width: 240px;
+  }
+}
+
+.book-chapters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  .chapter {
+    display: flex;
+  }
+}

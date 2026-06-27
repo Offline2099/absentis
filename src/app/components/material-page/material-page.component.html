@@ -1,0 +1,11 @@
+<div class="column">
+
+  @if (material(); as material) {
+    @for (part of material.parts; track part.id) {
+      <a class="material-part" [routerLink]="part.id">
+        {{ part.title }}
+      </a>
+    }
+  }
+
+</div>

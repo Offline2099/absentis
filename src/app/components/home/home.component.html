@@ -1,0 +1,31 @@
+<h1>
+  <div class="author">Денис Абсентис</div>
+  <div class="title">ЗЛАЯ КОРЧА</div>
+</h1>
+
+@if (contentList(); as contentList) {
+  <h2>Книги</h2>
+
+  <div class="wrapper">
+    @for (book of contentList.books; track book.id) {
+      <a class="book-container" [routerLink]="book.id">
+        <img src="img/books/{{ book.id }}.webp" [alt]="book.title" />
+        <div class="book-data">
+          <div class="book-title">{{ book.title }}</div>
+          <div class="book-year">{{ book.year }}</div>
+        </div>
+      </a>
+    }
+  </div>
+  
+  <h2>Материалы</h2>
+
+  <div class="wrapper">
+    @for (material of contentList.materials; track material.id) {
+      <a class="material-container" [routerLink]="material.id">
+        <img src="img/materials/{{ material.id }}.webp" [alt]="material.title" />
+        <div class="material-title">{{ material.title }}</div>    
+      </a>
+    }
+  </div>
+}

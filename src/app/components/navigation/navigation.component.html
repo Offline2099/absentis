@@ -1,0 +1,38 @@
+@if (!isMainPage()) {
+  <div class="nav-bar">
+    <a routerLink="/">Home</a>
+    @if (primary(); as primary) {
+      <span> &#9656; </span>
+      <a [routerLink]="['/', primary.id]">{{ primary.title }}</a>
+      @if (secondary(); as secondary) {
+        <span> &#9656; </span>
+        <a [routerLink]="['/', primary.id, secondary.id ]">{{ secondary.title }}</a>
+      }
+    }
+  </div>
+}
+
+<button type="button" class="nav-button" (click)="togglePanel()"></button>
+
+@if (isPanelOpen()) {
+  <div class="blocker" (click)="togglePanel()"></div>
+}
+
+<div class="nav-panel" [ngClass]="{ 'open': isPanelOpen() }">
+  @if (contentList(); as content) {
+    <h3>Книги</h3>
+    @for (book of content.books; track book.id) {
+      <a [routerLink]="['/', book.id]">{{ book.title }}</a>
+      @for (chapter of book.chapters; track chapter.id) {
+        <a [routerLink]="['/', book.id, chapter.id]">{{ chapter.caption }}: {{ chapter.title }}</a>
+      }
+    }
+    <h3>Материалы</h3>
+    @for (material of content.materials; track material.id) {
+      <a [routerLink]="['/', material.id]">{{ material.title }}</a>
+      @for (part of material.parts; track part.id) {
+        <a [routerLink]="['/', material.id, part.id]">{{ part.title }}</a>
+      }
+    }
+  }
+</div>

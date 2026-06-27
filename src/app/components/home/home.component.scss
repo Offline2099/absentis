@@ -1,0 +1,93 @@
+@use '../../../scss' as *;
+
+:host {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px 0;
+}
+
+h1 {
+  text-align: center;
+  .author {
+    font-size: 40px;
+    font-weight: 100;
+  }
+  .title {
+    font-size: 80px;
+    //font-variant: small-caps;
+    letter-spacing: 0.1em;
+  }
+}
+
+h2 {
+  width: min(1000px, 100% - 20px);
+  margin-top: 40px;
+  border-bottom: 1px solid #555;
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  max-width: calc(100% - 20px);
+  margin: 40px 0;
+}
+
+.book-container {
+  display: block;
+  border-radius: 5px;
+  background-color: #222;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  transition: .2s;
+  outline: 5px solid transparent;
+  @include hover {
+    outline-color: #444;
+  }
+  img {
+    display: block;
+    width: 240px;
+    aspect-ratio: 204 / 291;
+  }
+  .book-data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+  }
+  .book-title {
+    font-size: 22px;
+    letter-spacing: 0.03em;
+  }
+  .book-year {
+    font-size: 18px;
+  }
+}
+
+.material-container {
+  border-radius: 5px;
+  background-color: #222;
+  text-align: center;
+  overflow: hidden;
+  transition: .2s;
+  outline: 5px solid transparent;
+  @include hover {
+    outline-color: #444;
+  }
+  img {
+    display: block;
+    width: 300px;
+    aspect-ratio: 1;
+  }
+  .material-title {
+    padding: 10px;
+    font-size: 22px;
+    letter-spacing: 0.03em;
+  }
+}

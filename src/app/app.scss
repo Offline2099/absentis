@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// nav {
+//   position: fixed;
+//   width: 100%;
+//   height: 50px;
+//   background-color: #333;
+// }
+
+main {
+  display: flex;
+  min-height: calc(100vh);
+}
+
+footer {
+  width: 100%;
+  min-height: 100px;
+  background-color: #222;
+}

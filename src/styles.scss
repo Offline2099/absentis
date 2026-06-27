@@ -1,1 +1,34 @@
+@use 'scss' as *;
 
+html, body {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background: black;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #aaa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  &:focus {
+    outline: initial;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,37 @@
+<div class="column">
+
+  @if (book(); as book) {
+
+    <div class="book-data-container">
+      <img src="img/books/{{ book.id }}.webp" [alt]="book.title" />
+      <div class="book-data">
+        <table>
+          <tr>
+            <th>Автор</th>
+            <td>{{ book.author }}</td>
+          </tr>
+          <tr>
+            <th>Название</th>
+            <td>{{ book.title }}</td>
+          </tr>
+          <tr>
+            <th>ISBN</th>
+            <td>{{ book.isbn }}</td>
+          </tr>
+        </table>
+        <p>{{ book.description }}</p>
+      </div>
+    </div>
+
+    <h2>Отдельные главы</h2>
+
+    <div class="book-chapters">
+      @for (chapter of book.chapters; track chapter.id) {
+        <a class="chapter" [routerLink]="chapter.id">
+          {{ chapter.title }}
+        </a>
+      }
+    </div>
+  }
+  
+</div>

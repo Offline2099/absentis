@@ -23,12 +23,19 @@
       </div>
     </div>
 
-    <h2>Отдельные главы</h2>
+    <h2>
+      <ng-container>Отдельные главы</ng-container>
+      <div class="underline"></div>
+    </h2>
 
     <div class="book-chapters">
       @for (chapter of book.chapters; track chapter.id) {
-        <a class="chapter" [routerLink]="chapter.id">
-          {{ chapter.title }}
+        <a class="chapter" [routerLink]="chapter.id" draggable="false">
+          <img src="img/books/{{ book.id }}/{{ chapter.id }}.webp" alt="" />
+          <div class="card-data">
+            <div class="caption">{{ chapter.caption }}</div>
+            <div>{{ chapter.title }}</div>
+          </div>
         </a>
       }
     </div>

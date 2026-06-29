@@ -1,31 +1,107 @@
+@use '../../../scss' as *;
+
 :host {
-  width: 100%;
-  padding-top: 50px;
+  @include page;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  width: min(1000px, 100% - 20px);
-  height: 100%;
-  margin: 0 auto;
-  background-color: #111;
+  @include column;
 }
 
 .book-data-container {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: $bg-normal;
+  color: $text-normal;
+  @include tablet {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   img {
     display: block;
     width: 240px;
+    
+    border-radius: 4px;
+    transition: .2s;
+    @include hover {
+      filter: brightness(1.1);
+    }
+  }
+  .book-data {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 20px;
+    @include mobile {
+      gap: 10px;
+    }
+  }
+  table {
+    width: 100%;
+    th, td {
+      padding: 2px 5px;
+      background-color: $bg-bright;
+      transition: .2s;
+      @include hover {
+        filter: brightness(1.1);
+      }
+    }
+    th {
+      width: 150px;
+      text-align: left;
+    }
+  }
+  p {
+    padding: 0 2px;
+  }
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  @include subheader;
+  @include desktop-small {
+    font-size: 26px;
+  }
+  @include tablet {
+    font-size: 20px;
+  }
+  @include mobile {
+    font-size: 18px;
   }
 }
 
 .book-chapters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 15px;
   .chapter {
     display: flex;
+    @include card-horizontal;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    .card-data {
+      padding: 5px 5px 5px 10px;
+      letter-spacing: 0.03em;
+    }
+    .caption {
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+  }
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
   }
 }

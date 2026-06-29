@@ -1,38 +1,73 @@
 @if (!isMainPage()) {
   <div class="nav-bar">
-    <a routerLink="/">Home</a>
+    <a routerLink="/">
+      <img src="img/icons/home.webp" />
+    </a>
     @if (primary(); as primary) {
-      <span> &#9656; </span>
+      <span> &#10148; </span>
       <a [routerLink]="['/', primary.id]">{{ primary.title }}</a>
       @if (secondary(); as secondary) {
-        <span> &#9656; </span>
+        <span> &#10148; </span>
         <a [routerLink]="['/', primary.id, secondary.id ]">{{ secondary.title }}</a>
       }
     }
   </div>
 }
 
-<button type="button" class="nav-button" (click)="togglePanel()"></button>
+<button type="button" class="nav-button" (click)="togglePanel()">
+  @if (isPanelOpen()) {
+    <img class="icon" src="img/icons/cross.svg" alt="" />
+  } @else {
+    <img class="icon" src="img/icons/hamburger.svg" alt="" />
+  }  
+</button>
 
 @if (isPanelOpen()) {
   <div class="blocker" (click)="togglePanel()"></div>
 }
 
 <div class="nav-panel" [ngClass]="{ 'open': isPanelOpen() }">
+  <h2>Навигация по сайту</h2>
+
   @if (contentList(); as content) {
-    <h3>Книги</h3>
+    <h3>
+      <ng-container>Книги</ng-container>
+      <div class="underline"></div>
+    </h3>
+
     @for (book of content.books; track book.id) {
-      <a [routerLink]="['/', book.id]">{{ book.title }}</a>
-      @for (chapter of book.chapters; track chapter.id) {
-        <a [routerLink]="['/', book.id, chapter.id]">{{ chapter.caption }}: {{ chapter.title }}</a>
-      }
+      <div class="entity-container">
+        <div class="entity-header">
+          <a [routerLink]="['/', book.id]">{{ book.title }}</a>
+        </div>
+        <div class="entity-content">
+          @for (chapter of book.chapters; track chapter.id) {
+            <div>
+              <a [routerLink]="['/', book.id, chapter.id]">{{ chapter.caption }}: {{ chapter.title }}</a>
+            </div>
+          }
+        </div>
+      </div>
     }
-    <h3>Материалы</h3>
+
+    <h3>
+      <ng-container>Материалы</ng-container>
+      <div class="underline"></div>
+    </h3>
+
     @for (material of content.materials; track material.id) {
-      <a [routerLink]="['/', material.id]">{{ material.title }}</a>
-      @for (part of material.parts; track part.id) {
-        <a [routerLink]="['/', material.id, part.id]">{{ part.title }}</a>
-      }
+      <div class="entity-container">
+        <div class="entity-header">
+          <a [routerLink]="['/', material.id]">{{ material.title }}</a>
+        </div>
+        <div class="entity-content">
+          @for (part of material.parts; track part.id) {
+            <div>
+              <a [routerLink]="['/', material.id, part.id]">{{ part.title }}</a>
+            </div>
+          }
+        </div>
+      </div>
     }
   }
 </div>

@@ -1,15 +1,21 @@
+@use '../scss' as *;
+
 :host {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background: url('../../public/img/bg/wheat.webp');
+  background-size: 25%;
+  @include desktop-small {
+    background-size: 30%;
+  }
+  @include tablet {
+    background-size: 40%;
+  }
+  @include mobile {
+    background-size: 50%;
+  }
 }
-
-// nav {
-//   position: fixed;
-//   width: 100%;
-//   height: 50px;
-//   background-color: #333;
-// }
 
 main {
   display: flex;
@@ -18,6 +24,12 @@ main {
 
 footer {
   width: 100%;
-  min-height: 100px;
-  background-color: #222;
+  min-height: 120px;
+  padding: 30px 10px;
+  background: url('../../public/img/bg/wheat-pattern.webp');
+  background-size: 180px;
+  box-shadow: 0 0 3px 3px black;
+  color: $text-dark;
+  text-align: center;
+  letter-spacing: 0.03em;
 }

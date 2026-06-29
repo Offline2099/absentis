@@ -35,7 +35,7 @@ export class NavigationComponent {
           if (this.isPanelOpen()) this.togglePanel();
         })
       ),
-      { initialValue: false }
+      { initialValue: true }
     );
   }
 

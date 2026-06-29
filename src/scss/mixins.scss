@@ -1,7 +1,127 @@
+@use 'colors' as *;
+@use 'breakpoints' as *;
+
 @mixin hover {
   @media (hover: hover) {
     &:hover {
       @content;
     }
+  }
+}
+
+@mixin no-scroll-bar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@mixin page {
+  width: 100%;
+  padding-top: 50px;
+  animation: fade-in 1s;
+  @include mobile {
+    padding-top: 0;
+  }
+}
+
+@mixin card {
+  position: relative;
+  color: $text-dark;
+  background-color: $bg-normal;
+  text-shadow: .5px .5px black;
+  transition: .2s;
+  &:after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 8px;
+    outline: 2px solid $border-dark;
+    pointer-events: none;
+    transition: .2s;
+  }
+  img {
+    display: block;
+  }
+  .card-data {
+    background: linear-gradient(
+      135deg,
+      $bg-normal 0%, $bg-bright 40%, 
+      $bg-bright 60%, $bg-normal 100%
+    );
+  }
+  @include hover {
+    color: $text-hovered;
+    filter: brightness(1.1);
+    &:after {
+      outline-color: $border-hovered;
+    }
+  }
+}
+
+@mixin card-vertical {
+  @include card;
+  img {
+    border-radius: 6px 6px 0 0;
+  }
+  .card-data {
+    border-top: 1px solid black;
+    border-radius: 0 0 6px 6px;
+  }
+}
+
+@mixin card-horizontal {
+  @include card;
+  &:after {
+    outline-width: 1px;
+  }
+  img {
+    flex-shrink: 0;
+    border-radius: 6px 0 0 6px;
+  }
+  .card-data {
+    flex-grow: 1;
+    border-left: 1px solid black;
+    border-radius: 0 6px 6px 0;
+  }
+}
+
+@mixin column {
+  width: min(1000px, 100% - 20px);
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px 10px 100px 10px;
+  background-color: $bg-transparent;
+  @include mobile {
+    width: calc(100% - 10px);
+    padding: 15px 5px 100px 5px;
+  }
+}
+
+@mixin line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0, $border-normal 50px,
+    $border-normal calc(100% - 50px), transparent 100%
+  );
+  @include mobile {
+    height: 1px;
+  }
+}
+
+@mixin subheader {
+  width: min(1000px, 100% - 20px);
+  color: $text-darker;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  .underline {
+    @include line;
   }
 }

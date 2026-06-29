@@ -1,14 +1,14 @@
+@use '../../../scss' as *;
+
 :host {
-  width: 100%;
-  padding-top: 50px;
+  @include page;
 }
 
 .column {
-  width: min(1000px, 100% - 20px);
-  height: 100%;
-  margin: 0 auto;
-  padding: 15px 15px 200px 15px;
-  background-color: #111;
+  display: block;
+  color: $text-normal;
+  letter-spacing: 0.02em;
+  @include column;
   & > * {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -16,20 +16,78 @@
 }
 
 hgroup {
-  text-align: center;
   margin-bottom: 100px !important;
+  text-align: center;
+  div {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 20px;
+    @include tablet {
+      font-size: 18px;
+    }
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+  h2 {
+    color: $text-dark;
+    font-family: 'Philosopher Bold', sans-serif;
+    font-size: 40px;
+    letter-spacing: 0.03em;
+    @include tablet {
+      font-size: 34px;
+    }
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+}
+
+p {
+  padding: 0 5px;
+}
+
+sup {
+  font-size: smaller;
+  line-height: 1;
+}
+
+a {
+  color: $text-darker;
+  @include hover {
+    color: $text-hovered;
+  }
 }
 
 .quote {
   margin-left: 20px;
-  padding-left: 10px;
-  border-left: 2px solid #333;
+  padding: 5px 10px;
+  border-left: 2px solid $border-dark;
+  font-family: 'Shantell Sans', sans-serif;
+  font-weight: 300;
+  background: linear-gradient(90deg, $bg-normal, transparent);
+  sup {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+  }
+  @include mobile {
+    margin-left: 15px;
+  }
 }
 
 .epigraph {
-  margin: 0 50px 0 33%;
+  margin: 0 50px 30px 33% !important;
+  font-family: 'Shantell Sans', sans-serif;
+  font-weight: 300;
+  font-style: italic;
   .author {
+    margin-top: 8px;
+    margin-left: 15%;
     text-align: right;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+  }
+  @include mobile {
+    margin: 0 20px 30px 20% !important;
   }
 }
 
@@ -38,20 +96,59 @@ figure,
   display: flex;
   flex-direction: column;
   align-items: center;
-  caption {
+  .video-wrapper {
+    max-width: calc(100% - 20px);
+    aspect-ratio: 16 / 9;
     padding: 5px;
+    border: 1px solid $border-dark;
+    border-radius: 6px;
+    background-color: $bg-normal;
+  }
+  iframe {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    border-radius: 4px;
+  }
+  caption {
+    padding: 8px 5px 3px 5px;
     text-align: center;
   }
 }
 
 figure {
+  .image-wrapper {
+    max-width: calc(100% - 20px);
+    padding: 5px;
+    border: 1px solid $border-dark;
+    border-radius: 6px;
+    background-color: $bg-normal;
+  }
   &.to-left {
     float: left;
     margin-top: 0 !important;
+    @include mobile {
+      float: none;
+    }
   }
   &.to-right {
     float: right;
     margin-top: 0 !important;
+    @include mobile {
+      float: none;
+    }
+  }
+  img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  figcaption {
+    padding: 8px 5px 3px 5px;
+    text-align: center;
+    font-size: 15px;
+    @include mobile {
+      font-size: 13px;
+    }
   }
 }
 
@@ -59,12 +156,20 @@ figure {
   text-align: center;
 }
 
+.line {
+  margin: 25px 0 !important;
+  @include line;
+}
+
 ol {
-  margin-top: 50px !important;
   margin-left: 40px;
+  color: $text-dark;
   font-size: 14px;
   li {
-    margin-left: 10px;
+    padding: 0 5px;
     margin-bottom: 5px;
+  }
+  @include mobile {
+    font-size: 12px;
   }
 }

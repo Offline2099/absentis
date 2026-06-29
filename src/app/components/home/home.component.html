@@ -1,30 +1,36 @@
-<h1>
+<header>
   <div class="author">Денис Абсентис</div>
-  <div class="title">ЗЛАЯ КОРЧА</div>
-</h1>
+  <h1>ЗЛАЯ КОРЧА</h1>
+</header>
 
 @if (contentList(); as contentList) {
-  <h2>Книги</h2>
+  <h2>
+    <ng-container>Книги</ng-container>
+    <div class="underline"></div>
+  </h2>
 
   <div class="wrapper">
     @for (book of contentList.books; track book.id) {
-      <a class="book-container" [routerLink]="book.id">
+      <a class="book-container" [routerLink]="book.id" draggable="false">
         <img src="img/books/{{ book.id }}.webp" [alt]="book.title" />
-        <div class="book-data">
+        <div class="card-data">
           <div class="book-title">{{ book.title }}</div>
-          <div class="book-year">{{ book.year }}</div>
+          <div class="book-year">({{ book.year }})</div>
         </div>
       </a>
     }
   </div>
   
-  <h2>Материалы</h2>
+  <h2>
+    <ng-container>Материалы</ng-container>
+    <div class="underline"></div>
+  </h2>
 
   <div class="wrapper">
     @for (material of contentList.materials; track material.id) {
-      <a class="material-container" [routerLink]="material.id">
+      <a class="material-container" [routerLink]="material.id" draggable="false">
         <img src="img/materials/{{ material.id }}.webp" [alt]="material.title" />
-        <div class="material-title">{{ material.title }}</div>    
+        <div class="card-data">{{ material.title }}</div>    
       </a>
     }
   </div>

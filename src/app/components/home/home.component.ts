@@ -1,7 +1,7 @@
 import { Component, Signal } from '@angular/core';
-import { DataFetchService } from '../../services/data-fetch.service';
-import { ContentList } from '../../types/content-list.interface';
 import { RouterLink } from "@angular/router";
+import { ContentList } from '../../types/content-list.interface';
+import { DataFetchService } from '../../services/data-fetch.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +16,5 @@ export class HomeComponent {
   constructor(private data: DataFetchService) {
     this.contentList = this.data.contentList;
   }
-
-  
 
 }

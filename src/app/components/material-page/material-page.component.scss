@@ -1,13 +1,36 @@
+@use '../../../scss' as *;
+
 :host {
-  width: 100%;
-  padding-top: 50px;
+  @include page;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  width: min(1000px, 100% - 20px);
-  height: 100%;
-  margin: 0 auto;
-  background-color: #111;
+  @include column;
+}
+
+.parts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 10px 15px;
+  .material-part {
+    display: flex;
+    @include card-horizontal;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    .card-data {
+      padding: 5px 5px 5px 10px;
+      letter-spacing: 0.03em;
+    }
+  }
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
 }

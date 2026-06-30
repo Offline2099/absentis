@@ -1,6 +1,6 @@
 import { ArticleElement } from '../../constants/article-element.enum';
 import { ImagePosition } from '../../constants/image-position.enum';
-import { Text } from './text.type';
+import { Text } from './text/text.type';
 
 export interface Image {
   type: ArticleElement.image;

@@ -12,6 +12,7 @@
   & > * {
     margin-top: 10px;
     margin-bottom: 10px;
+    white-space-collapse: collapse;
   }
 }
 
@@ -47,8 +48,12 @@ p {
 }
 
 sup {
-  font-size: smaller;
+  margin-left: .25em;
+  font-size: 12px;
   line-height: 1;
+  @include mobile {
+    font-size: 10px;
+  }
 }
 
 a {
@@ -60,13 +65,32 @@ a {
 
 .quote {
   margin-left: 20px;
-  padding: 5px 10px;
+  padding: 6px 10px 7px 10px;
   border-left: 2px solid $border-dark;
   font-family: 'Shantell Sans', sans-serif;
   font-weight: 300;
   background: linear-gradient(90deg, $bg-normal, transparent);
+  &.complex {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .quote {
+      margin-left: 10px;
+    }
+    .author {
+      margin-top: 0;
+    }
+  }
   sup {
     font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+  }
+  .author {
+    margin-top: 8px;
+    margin-left: 15%;
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
     font-weight: normal;
   }
   @include mobile {
@@ -97,6 +121,7 @@ figure,
   flex-direction: column;
   align-items: center;
   .video-wrapper {
+    width: fit-content;
     max-width: calc(100% - 20px);
     aspect-ratio: 16 / 9;
     padding: 5px;
@@ -111,6 +136,7 @@ figure,
     border-radius: 4px;
   }
   caption {
+    max-width: 100%;
     padding: 8px 5px 3px 5px;
     text-align: center;
   }
@@ -118,6 +144,7 @@ figure,
 
 figure {
   .image-wrapper {
+    width: fit-content;
     max-width: calc(100% - 20px);
     padding: 5px;
     border: 1px solid $border-dark;
@@ -139,10 +166,12 @@ figure {
     }
   }
   img {
-    max-width: 100%;
+    display: block;
+    width: 100%;
     border-radius: 4px;
   }
   figcaption {
+    max-width: 100%;
     padding: 8px 5px 3px 5px;
     text-align: center;
     font-size: 15px;
@@ -161,13 +190,24 @@ figure {
   @include line;
 }
 
-ol {
-  margin-left: 40px;
+ul {
+  list-style-type: none;
+  padding: 0 5px 0 15px;
   color: $text-dark;
   font-size: 14px;
   li {
-    padding: 0 5px;
-    margin-bottom: 5px;
+    display: flex;
+    gap: 10px;
+    margin: 2px 0;
+    border-radius: 4px;
+    &.selected {
+      background-color: $bg-normal;
+    }
+    .reference-id {
+      flex-shrink: 0;
+      text-align: right;
+      width: 2em;
+    }
   }
   @include mobile {
     font-size: 12px;

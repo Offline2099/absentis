@@ -1,7 +1,9 @@
 import { Component, computed, Signal } from '@angular/core';
-import { NgClass, NgTemplateOutlet } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { NgClass, NgTemplateOutlet, ViewportScroller } from '@angular/common';
+import { ActivatedRoute, Data, RouterLink } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { map } from 'rxjs';
 import { ArticleElement } from '../../constants/article-element.enum';
 import { InlineElement } from '../../constants/inline-element.enum';
 import { ImagePosition } from '../../constants/image-position.enum';
@@ -22,20 +24,29 @@ export class ArticleComponent {
 
   article: Signal<Article | null>;
   videoURL: Signal<Record<string, SafeResourceUrl>>;
+  selectedReferenceId: Signal<number | string | null>;
 
   constructor(
     private route: ActivatedRoute,
     private data: DataFetchService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private scroller: ViewportScroller
   ) {
-    const primaryId: string | undefined = 
-      this.route.snapshot.data['book']?.id || this.route.snapshot.data['material']?.id;
-    const secondaryId: string | undefined = 
-      this.route.snapshot.data['chapter']?.id || this.route.snapshot.data['part']?.id;
-    this.article = this.data.fetchArticle(primaryId, secondaryId);
+    this.article = this.getArticle(this.route.snapshot.data);
     this.videoURL = computed<Record<string, SafeResourceUrl>>(() => 
       this.article() ? this.extractVideoURLs(this.article()!) : {}
     );
+    this.selectedReferenceId = toSignal(
+      this.route.fragment.pipe(map(fragment => this.fragmentToId(fragment))),
+      { initialValue: null }
+    );
+    this.scroller.setOffset([0, 60]);
+  }
+
+  getArticle(routeData: Data): Signal<Article | null> {
+    const primaryId: string | undefined = routeData['book']?.id || routeData['material']?.id;
+    const secondaryId: string | undefined = routeData['chapter']?.id || routeData['part']?.id;
+    return this.data.fetchArticle(primaryId, secondaryId);
   }
 
   extractVideoURLs(article: Article): Record<string, SafeResourceUrl> {
@@ -45,6 +56,12 @@ export class ArticleComponent {
       acc[id] = this.sanitizer.bypassSecurityTrustResourceUrl(el.url);
       return acc;
     }, {} as Record<string, SafeResourceUrl>)
+  }
+
+  fragmentToId(fragment: string | null): number | string | null {
+    if (!fragment) return null;
+    const id: string = fragment.replace('reference-', '').trim();
+    return /^-?\d+$/.test(id) ? Number(id) : id;
   }
 
 }

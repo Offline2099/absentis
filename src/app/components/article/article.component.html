@@ -14,34 +14,18 @@
 
         <!-- Paragraph -->
         @case (ArticleElement.paragraph) {
-          <p>
-            <ng-template 
-              [ngTemplateOutlet]="text" 
-              [ngTemplateOutletContext]="{ content: element.content }" 
-            />
-          </p>
+          <ng-template 
+            [ngTemplateOutlet]="paragraph" 
+            [ngTemplateOutletContext]="{ element }" 
+          />
         }
 
         <!-- Quote -->
         @case (ArticleElement.quote || ArticleElement.epigraph) {
-          <blockquote class="quote">
-            @for (part of element.content; track $index) {
-              <div>
-                <ng-template 
-                  [ngTemplateOutlet]="text" 
-                  [ngTemplateOutletContext]="{ content: part }" 
-                />
-              </div>
-            }
-            @if (element.author) {
-              <div class="author">
-                <ng-template 
-                  [ngTemplateOutlet]="text" 
-                  [ngTemplateOutletContext]="{ content: element.author }" 
-                />
-              </div>
-            }
-          </blockquote>
+          <ng-template 
+            [ngTemplateOutlet]="quote" 
+            [ngTemplateOutletContext]="{ element }" 
+          />
         }
 
         <!-- Epigraph -->
@@ -121,21 +105,25 @@
         <!-- References -->
         @case (ArticleElement.referenceList) {
           <div class="line"></div>
-          <ol class="reference-list">
+          <ul class="reference-list">
             @for (reference of element.content; track reference.id) {
-              <li id="reference-{{ reference.id }}">
-                <ng-template 
-                  [ngTemplateOutlet]="text" 
-                  [ngTemplateOutletContext]="{ content: reference.content }" 
-                /> 
+              <li 
+                id="reference-{{ reference.id }}"
+                [ngClass]="{ 'selected': reference.id === selectedReferenceId() }">
+                <div class="reference-id">{{ reference.text || reference.id + '.' }}</div>
+                <div>
+                  <ng-template 
+                    [ngTemplateOutlet]="text" 
+                    [ngTemplateOutletContext]="{ content: reference.content }" 
+                  />
+                </div>
               </li>
             }
-          </ol>
+          </ul>
         }
       }
     }
   }
-  
 
 </div>
 
@@ -143,18 +131,76 @@
 <ng-template #text let-content="content">
   @for (element of content; track $index) {
     @if (typeof element === 'string') {
-      {{ element }}
+      <ng-container>{{ element }}</ng-container>
     } @else {
       @switch (element.type) {
+        @case (InlineElement.italic) {
+          <i>{{ element.text }}</i>
+        }
+        @case (InlineElement.bold) {
+          <b>{{ element.text }}</b>
+        }
         @case (InlineElement.link) {
           <a [href]="element.url" target="_blank">{{ element.text }}</a>
         }
         @case (InlineElement.reference) {
           <sup>
-            <a [routerLink]="[]" fragment="reference-{{ element.id }}">[{{ element.id }}]</a>
+            <a [routerLink]="[]" fragment="reference-{{ element.id }}">
+              <ng-container>[{{ element.text || element.id }}]</ng-container>
+            </a>
           </sup>
         }
       }
     }
   }
+</ng-template>
+
+<!-- Template: Paragaraph -->
+<ng-template #paragraph let-element="element">
+  <p>
+    <ng-template 
+      [ngTemplateOutlet]="text" 
+      [ngTemplateOutletContext]="{ content: element.content }" 
+    />
+  </p>
+</ng-template>
+
+<!-- Template: Quote -->
+<ng-template #quote let-element="element">
+  <blockquote class="quote" [ngClass]="{ 'complex': element.complexContent }">
+    @for (part of element.content; track $index) {
+      <div>
+        <ng-template 
+          [ngTemplateOutlet]="text" 
+          [ngTemplateOutletContext]="{ content: part }" 
+        />
+      </div>
+    }
+    @if (element.complexContent) {
+      @for (part of element.complexContent; track $index) {
+        @switch (part.type) {
+          @case (ArticleElement.paragraph) {
+            <ng-template 
+              [ngTemplateOutlet]="paragraph" 
+              [ngTemplateOutletContext]="{ element: part }"
+            />
+          }
+          @case (ArticleElement.quote) {
+            <ng-template 
+              [ngTemplateOutlet]="quote" 
+              [ngTemplateOutletContext]="{ element: part }"
+            />
+          }
+        }
+      }
+    }
+    @if (element.author) {
+      <div class="author">
+        <ng-template 
+          [ngTemplateOutlet]="text" 
+          [ngTemplateOutletContext]="{ content: element.author }" 
+        />
+      </div>
+    }
+  </blockquote>
 </ng-template>

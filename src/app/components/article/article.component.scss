@@ -71,9 +71,12 @@ a {
   font-weight: 300;
   background: linear-gradient(90deg, $bg-normal, transparent);
   &.complex {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    & > * {
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
     .quote {
       margin-left: 10px;
     }
@@ -115,13 +118,12 @@ a {
   }
 }
 
-figure,
 .video-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   .video-wrapper {
-    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
     max-width: calc(100% - 20px);
     aspect-ratio: 16 / 9;
     padding: 5px;
@@ -130,21 +132,25 @@ figure,
     background-color: $bg-normal;
   }
   iframe {
+    flex: 1 0 100%;
     max-width: 100%;
     max-height: 100%;
-    display: block;
     border-radius: 4px;
   }
   caption {
-    max-width: 100%;
+    flex: 1; 
+    width: min-content;
     padding: 8px 5px 3px 5px;
     text-align: center;
   }
 }
 
 figure {
+  display: flex;
+  justify-content: center;
   .image-wrapper {
-    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
     max-width: calc(100% - 20px);
     padding: 5px;
     border: 1px solid $border-dark;
@@ -153,25 +159,26 @@ figure {
   }
   &.to-left {
     float: left;
-    margin-top: 0 !important;
+    margin: 0 !important;
     @include mobile {
       float: none;
     }
   }
   &.to-right {
     float: right;
-    margin-top: 0 !important;
+    margin: 0 !important;
     @include mobile {
       float: none;
     }
   }
   img {
-    display: block;
-    width: 100%;
+    flex: 1 0 100%;
+    max-width: 100%;
     border-radius: 4px;
   }
   figcaption {
-    max-width: 100%;
+    flex: 1; 
+    width: min-content;
     padding: 8px 5px 3px 5px;
     text-align: center;
     font-size: 15px;

@@ -4,13 +4,24 @@
 
     <!-- Header -->
     <hgroup>
-      <div>{{ article.caption }}</div>
+      @if (article.caption) {
+        <div>{{ article.caption }}</div>
+      }
       <h2>{{ article.title }}</h2>
     </hgroup>
 
     <!-- Article Elements -->
     @for (element of article.content; track $index) {
       @switch (element.type) {
+
+        @case (ArticleElement.subheader) {
+          <h3>
+            <ng-template 
+              [ngTemplateOutlet]="text" 
+              [ngTemplateOutletContext]="{ content: element.content }" 
+            />
+          </h3>
+        }
 
         <!-- Paragraph -->
         @case (ArticleElement.paragraph) {
@@ -102,6 +113,20 @@
           <div class="separator">***</div>
         }
 
+        <!-- Attribution -->
+        @case (ArticleElement.attribution) {
+          <div class="attribution">
+            @for (part of element.content; track $index) {
+              <div>
+                <ng-template 
+                  [ngTemplateOutlet]="text" 
+                  [ngTemplateOutletContext]="{ content: part }" 
+                />
+              </div>
+            }
+          </div>
+        }
+
         <!-- References -->
         @case (ArticleElement.referenceList) {
           <div class="line"></div>
@@ -135,10 +160,20 @@
     } @else {
       @switch (element.type) {
         @case (InlineElement.italic) {
-          <i>{{ element.text }}</i>
+          <i>
+            <ng-template 
+              [ngTemplateOutlet]="text" 
+              [ngTemplateOutletContext]="{ content: element.text }" 
+            />
+          </i>
         }
         @case (InlineElement.bold) {
-          <b>{{ element.text }}</b>
+          <b>
+            <ng-template 
+              [ngTemplateOutlet]="text" 
+              [ngTemplateOutletContext]="{ content: element.text }" 
+            />
+          </b>
         }
         @case (InlineElement.link) {
           <a [href]="element.url" target="_blank">{{ element.text }}</a>

@@ -5,10 +5,15 @@
 }
 
 .column {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  @include column;
+}
+
+.column-content {
+  margin-bottom: 80px;
   color: $text-normal;
   letter-spacing: 0.02em;
-  @include column;
   & > * {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -16,8 +21,44 @@
   }
 }
 
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  &:first-child {
+    margin-top: 0 !important;
+  }
+  &:last-child {
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+  }
+  a.disabled {
+    pointer-events: none !important;
+    filter: grayscale(1);
+  }
+  button {
+    display: inline-block;
+    width: 120px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: $bg-normal;
+    color: $text-darker;
+    font-size: 16px;
+    letter-spacing: .03em;
+    transition: .2s;
+    cursor: pointer;
+    @include hover {
+      color: $text-dark;
+    }
+    @include mobile {
+      width: 106px;
+      font-size: 14px;
+    }
+  }
+}
+
 hgroup {
-  margin-bottom: 100px !important;
+  margin-bottom: 80px !important;
   text-align: center;
   div {
     font-family: 'Philosopher', sans-serif;

@@ -4,10 +4,10 @@ import { Router, RouterLink, NavigationEnd, Route } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, tap } from 'rxjs';
 import { ContentList } from '../../types/content-list.interface';
-import { Book } from '../../types/book.interface';
-import { Material } from '../../types/material.interface';
-import { BookChapter } from '../../types/book-chapter.interface';
-import { MaterialPart } from '../../types/material-part.interface';
+import { Book } from '../../types/book/book.interface';
+import { Material } from '../../types/material/material.interface';
+import { BookChapter } from '../../types/book/book-chapter.interface';
+import { MaterialPart } from '../../types/material/material-part.interface';
 import { DataFetchService } from '../../services/data-fetch.service';
 
 @Component({

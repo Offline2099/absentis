@@ -40,6 +40,7 @@
 
 @mixin card {
   position: relative;
+  border-radius: 6px;
   color: $text-dark;
   background-color: $bg-normal;
   text-shadow: .5px .5px black;
@@ -116,7 +117,6 @@
 }
 
 @mixin subheader {
-  width: min(1000px, 100% - 20px);
   color: $text-darker;
   text-align: center;
   font-weight: 400;

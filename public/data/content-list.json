@@ -7,6 +7,7 @@
       "year": 2011,
       "isbn": "9786169071839",
       "description": "Связаны ли древние элевсинские мистерии с афинской чумой? Что именно помогло разбогатеть тамплиерам? Изображен ли демон на Изенхеймском алтаре? Спасал ли паломников путь святого Иакова или же был Дорогой Смерти? Какие «невидимые бесы» напали на Полоцк? Откуда взялись лютые крокодилы в русской летописи? Что делает загадочная ведьма на гравюре из трактата Молитора? Почему на Руси боялись росы святого Ферапонта? Инквизиторы верили, что ведьмы крадут половые члены и селят их в гнезда на деревьях, а отрывает члены лично дьявол. Считали ли русские скопцы, что члены, наоборот, отрывает сам Господь? С кем выходила на драку баба Яга? Чем объясняются эпидемии одержимости в монастырях в XVI-XVII вв? Что влияло на популярность галлюциногенной мандрагоры? Почему серьезная охота на ведьм и оборотней началась только в XVI веке? Что спровоцировало Великую Французскую революцию? Какую роль сыграл в этих и многих других событиях скромный грибок, из которого в XX веке был синтезирован знаменитый психоделик ЛСД?",
+      "googleBooksURL": "https://www.google.co.th/books/edition/%D0%97%D0%BB%D0%B0%D1%8F_%D0%9A%D0%BE%D1%80%D1%87%D0%B0/3Dt5tL5PxGQC?hl=en&gbpv=1&dq=%D0%B4%D0%B5%D0%BD%D0%B8%D1%81+%D0%B0%D0%B1%D1%81%D0%B5%D0%BD%D1%82%D0%B8%D1%81&printsec=frontcover",
       "chapters": [
         {
           "id": "preface",
@@ -138,7 +139,526 @@
           "caption": "Глава 25",
           "title": "Заговор врагов и Великий страх"
         }
-      ]
+      ],
+      "relatedVideos": [
+        {
+          "name": "Хлеб",
+          "year": 2013,
+          "description": "Не очень удачная попытка краткого освещения ситуации по мотивам моих книг. Несмотря на общее относительно адекватное описание в этом отрывке фильма (с ошибками, но все же терпимыми), впечатление сильно портит то, что вместо рожков спорыньи показана головня(подобным образом можно в фильме о жизни китов показывать слонов - да какая разница, они же тоже млекопитающие). То есть команда наглядно расписалась в том, что у фильма не было никакого постоянного консультанта, а сами они не пытались разобраться в теме. И что качественно снять даже простенький научно-популярный фильм в России сейчас невозможно.",
+          "url": "https://www.youtube.com/embed/vwQ02BPTjWM?si=hly3HRmEyE7YkiWn"
+        }
+      ],
+      "shops": {
+        "byCountry": [
+          {
+            "country": "Австралия",
+            "shops": [
+              {
+                "name": "Fishpond",
+                "url": "http://www.fishpond.com.au/Books/Zlaya-Korcha-Denis-Absentis/9786169071839"
+              }
+            ]
+          },
+          {
+            "country": "Австрия",
+            "shops": [
+              {
+                "name": "Thalia.at",
+                "url": "https://www.thalia.at/shop/home/artikeldetails/ID30566534.html"
+              }
+            ]
+          },
+          {
+            "country": "Германия",
+            "shops": [
+              {
+                "name": "Amazon.de",
+                "url": "http://www.amazon.de/Zlaya-Korcha-Denis-Absentis/dp/6169071834/"
+              },
+              {
+                "name": "Bol",
+                "url": "https://www.bol.de/shop/home/artikeldetails/ID30566534.html"
+              },
+              {
+                "name": "Buecher",
+                "url": "http://www.buecher.de/shop/buecher/zlaya-korcha/absentis-denis/products_products/detail/prod_id/34493872/"
+              },
+              {
+                "name": "Buch.de",
+                "url": "http://www.buch.de/shop/home/suche/?sq=9786169071839"
+              },
+              {
+                "name": "Lehmanns",
+                "url": "http://www.lehmanns.de/shop/medizin-pharmazie/21549934-9786169071839-zlaya-korcha"
+              },
+              {
+                "name": "Thalia",
+                "url": "http://www.thalia.de/shop/tha_homestartseite/suche/?sq=9786169071839"
+              }
+            ]
+          },
+          {
+            "country": "Голландия",
+            "shops": [
+              {
+                "name": "Van Stockum",
+                "url": "http://www.vanstockum.nl/product/9786169071839/"
+              }
+            ]
+          },
+          {
+            "country": "Дания",
+            "shops": [
+              {
+                "name": "Saxo",
+                "url": "https://www.saxo.com/dk/zlaya-korcha_denis-absentis_paperback_9786169071839"
+              }
+            ]
+          },
+          {
+            "country": "Индия",
+            "shops": [
+              {
+                "name": "Sapna",
+                "url": "https://www.sapnaonline.com/books/zlaya-korcha-russian-edition-denis-absentis-6169071834-9786169071839"
+              },
+              {
+                "name": "Flipkart",
+                "url": "https://www.flipkart.com/zlaya-korcha/p/itmd44agauvcmjjz"
+              },
+              {
+                "name": "Infibeam",
+                "url": "https://www.infibeam.com/Books/zlaya-korcha-denis-absentis/9786169071839.html"
+              },
+              {
+                "name": "Landmark",
+                "url": "http://www.landmarkonthenet.com/zlaya-korcha-by-denis-absentis-books-9786169071839-16065176/"
+              },
+              {
+                "name": "uRead",
+                "url": "http://www.uread.com/book/zlaya-korcha-denis-absentis/9786169071839"
+              }
+            ]
+          },
+          {
+            "country": "Индонезия",
+            "shops": [
+              {
+                "name": "Opentrolley",
+                "url": "https://opentrolley.co.id/Book_Detail.aspx?EAN=9786169071839"
+              }
+            ]
+          },
+          {
+            "country": "Испания",
+            "shops": [
+              {
+                "name": "Amazon.es",
+                "url": "http://www.amazon.es/Zlaya-Korcha-Denis-Absentis/dp/6169071834/"
+              },
+              {
+                "name": "Agapea",
+                "url": "http://www.agapea.com/libros/Zlaya-Korcha-9786169071839-i.htm"
+              },
+              {
+                "name": "El Corte",
+                "url": "https://www.elcorteingles.es/libros/MP_0012982_9786169071839-zlaya-korcha-9786169071839/"
+              }
+            ]
+          },
+          {
+            "country": "Италия",
+            "shops": [
+              {
+                "name": "Amazon.it",
+                "url": "http://www.amazon.it/gp/product/6169071834/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=zlaykorc02-21&linkCode=as2&camp=3370&creative=23322&creativeASIN=6169071834"
+              },
+              {
+                "name": "LibreriaUniversitaria",
+                "url": "https://www.libreriauniversitaria.it/zlaya-korcha-absentis-denis-oraco/book/9786169071839"
+              },
+              {
+                "name": "Webster",
+                "url": "https://www.webster.it/ricerca/query/9786169071839/reparto/tutti"
+              }
+            ]
+          },
+          {
+            "country": "Казахстан",
+            "shops": [
+              {
+                "name": "FLiP.kz",
+                "url": "http://www.flip.kz/catalog?prod=239245"
+              }
+            ]
+          },
+          {
+            "country": "Канада",
+            "shops": [
+              {
+                "name": "Amazon.ca",
+                "url": "http://www.amazon.ca/Zlaya-Korcha-Denis-Absentis/dp/6169071834/"
+              },
+              {
+                "name": "McNally Robinson",
+                "url": "http://www.mcnallyrobinson.com/9786169071839/denis-absentis/zlaya-korcha"
+              }
+            ]
+          },
+          {
+            "country": "Китай",
+            "shops": [
+              {
+                "name": "Amazon.cn",
+                "url": "https://www.amazon.cn/dp/6169071834/ref=sr_1_2?s=books&ie=UTF8&qid=1537443237&sr=1-2"
+              }
+            ]
+          },
+          {
+            "country": "Латвия",
+            "shops": [
+              {
+                "name": "Kriso.lv",
+                "url": "http://www.kriso.lv/zlaya-korcha-db-9786169071839.html"
+              }
+            ]
+          },
+          {
+            "country": "Новая Зеландия",
+            "shops": [
+              {
+                "name": "Academybooks.co.nz",
+                "url": "http://www.academybooks.co.nz/product/isbn/9786169071839/"
+              },
+              {
+                "name": "FishPond.co.nz",
+                "url": "http://www.fishpond.co.nz/Books/Zlaya-Korcha-Denis-Absentis/9786169071839"
+              },
+              {
+                "name": "TheNile",
+                "url": "http://thenile.co.nz/books/Denis-Absentis/Zlaya-Korcha/9786169071839/"
+              },
+              {
+                "name": "Wheelers",
+                "url": "https://www.wheelers.co.nz/books/9786169071839-zlaya-korcha-invisible-fire-of-death/"
+              }
+            ]
+          },
+          {
+            "country": "Норвегия",
+            "shops": [
+              {
+                "name": "Bokklubben",
+                "url": "https://www.bokklubben.no/serieSok.do?term=serietittel:%22Zlaya+Korcha%22&format=Paperback"
+              },
+              {
+                "name": "Capris",
+                "url": "https://www.adlibris.com/no/bok/zlaya-korcha-9786169071839"
+              },
+              {
+                "name": "Tanum",
+                "url": "https://www.tanum.no/_zlaya-korcha-denis-absentis-9786169071839"
+              }
+            ]
+          },
+          {
+            "country": "Польша",
+            "shops": [
+              {
+                "name": "Bookcity",
+                "url": "https://www.bookcity.pl/zlaya-korcha-denis-absentis/pid/A18842961"
+              },
+              {
+                "name": "Krainaksiazek",
+                "url": "http://krainaksiazek.pl/Zlaya-Korcha,9786169071839.html"
+              },
+              {
+                "name": "Allegro",
+                "url": "https://archiwum.allegro.pl/oferta/zlaya-korcha-i7343236048.html"
+              }
+            ]
+          },
+          {
+            "country": "Россия",
+            "shops": [
+              {
+                "name": "Books.ru",
+                "url": "http://books.ru/books/strategicheskii-marketing-287/?customer_product=1&partner=1012178"
+              },
+              {
+                "name": "Wildberries",
+                "url": "https://www.wildberries.ru/catalog/147590045/detail.aspx"
+              },
+              {
+                "name": "Буквоед",
+                "url": "https://www.bookvoed.ru/book?id=6174663"
+              },
+              {
+                "name": "Москва",
+                "url": "https://www.moscowbooks.ru/pod/author/528443/"
+              },
+              {
+                "name": "Озон",
+                "url": "https://www.ozon.ru/context/detail/id/31530429/?partner=bookprint"
+              },
+              {
+                "name": "Сбермаркет",
+                "url": "https://sbermegamarket.ru/catalog/details/zlaya-korcha-invisible-fire-of-death-100024528159/"
+              }
+            ]
+          },
+          {
+            "country": "Румыния",
+            "shops": [
+              {
+                "name": "BookExpress",
+                "url": "http://www.books-express.ro/book/9786169071839/Zlaya-Korcha.html"
+              },
+              {
+                "name": "Karte",
+                "url": "http://www.karte.ro/cumpara/zlaya-korcha-9786169071839"
+              }
+            ]
+          },
+          {
+            "country": "Сингапур",
+            "shops": [
+              {
+                "name": "Opentrolley",
+                "url": "https://opentrolley.com.sg/Book_Detail.aspx?EAN=9786169071839"
+              }
+            ]
+          },
+          {
+            "country": "Словакия",
+            "shops": [
+              {
+                "name": "Megabooks",
+                "url": "https://www.megabooks.sk/p/131280/zlaya-korcha"
+              }
+            ]
+          },
+          {
+            "country": "США",
+            "shops": [
+              {
+                "name": "Alibris",
+                "url": "http://www.alibris.com/booksearch?qsort=p&isbn=9786169071839"
+              },
+              {
+                "name": "Amazon.com",
+                "url": "http://www.amazon.com/gp/product/6169071834/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=zlaykorc-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=6169071834"
+              },
+              {
+                "name": "Barnes & Noble",
+                "url": "https://www.barnesandnoble.com/w/zlaya-korcha-denis-absentis/1128923304?ean=9786169071839"
+              },
+              {
+                "name": "BetterWorld",
+                "url": "https://www.betterworldbooks.com/product/detail/Zlaya-Korcha--Invisible-fire-of-death--Volume-1---Russian-Edition--9781727069723"
+              },
+              {
+                "name": "Books-A-Million",
+                "url": "http://www.booksamillion.com/product/9786169071839"
+              },
+              {
+                "name": "ShopWest",
+                "url": "http://www.bookshopwestportal.com/book/9786169071839"
+              },
+              {
+                "name": "Indiebound",
+                "url": "http://www.indiebound.org/book/9786169071839"
+              },
+              {
+                "name": "Powell's",
+                "url": "http://www.powells.com/partner/36639/biblio/9786169071839?p_isbn"
+              }
+            ]
+          },
+          {
+            "country": "Украина:",
+            "shops": [
+              {
+                "name": "BamBook",
+                "url": "http://www.bambook.com/scripts/pos.showitem?v=1&ite=151026"
+              },
+              {
+                "name": "Topbooks",
+                "url": "http://topbooks.com.ua/ru/katalog_knig/hudozhestvennaja_literatura/zlaja_korcha_.htm"
+              },
+              {
+                "name": "Одиссей",
+                "url": "http://odissey.kiev.ua/product_713529.html"
+              }
+            ]
+          },
+          {
+            "country": "Финляндия",
+            "shops": [
+              {
+                "name": "Adlibris",
+                "url": "http://www.adlibris.com/fi/product.aspx?lang=fi&isbn=6169071834"
+              },
+              {
+                "name": "Suomalainen",
+                "url": "http://www.suomalainen.com/fi/Zlaya-Korcha-sku-P9786169071839"
+              }
+            ]
+          },
+          {
+            "country": "Франция",
+            "shops": [
+              {
+                "name": "Amazon.fr",
+                "url": "http://www.amazon.fr/gp/product/6169071834/ref=as_li_qf_sp_asin_tl?ie=UTF8&tag=zlaykorc0c2-21&linkCode=as2&camp=1642&creative=6746&creativeASIN=6169071834"
+              }
+            ]
+          },
+          {
+            "country": "Швейцария",
+            "shops": [
+              {
+                "name": "Orellfuess",
+                "url": "https://www.orellfuessli.ch/shop/home/artikeldetails/ID30566534.html"
+              },
+              {
+                "name": "Lehmanns.ch",
+                "url": "https://www.lehmanns.ch/shop/medizin-pharmazie/21549934-9786169071839-zlaya-korcha"
+              },
+              {
+                "name": "Lelivre.ch",
+                "url": "https://www.lelivre.ch/Detail-zlaya_korcha-7-12082982"
+              }
+            ]
+          },
+          {
+            "country": "Швеция",
+            "shops": [
+              {
+                "name": "Adlibris",
+                "url": "https://www.adlibris.com/se/bok/zlaya-korcha-9786169071839"
+              },
+              {
+                "name": "Bokus",
+                "url": "https://www.bokus.com/bok/9786169071839/zlaya-korcha/"
+              }
+            ]
+          },
+          {
+            "country": "Эстония",
+            "shops": [
+              {
+                "name": "Krisostomus",
+                "url": "https://www.kriso.ee/zlaya-korcha-invisible-fire-death-db-9786169071839.html"
+              }
+            ]
+          },
+          {
+            "country": "ЮАР",
+            "shops": [
+              {
+                "name": "Loot.co.za",
+                "url": "https://www.loot.co.za/product/denis-absentis-zlaya-korcha/kgps-1850-g380"
+              },
+              {
+                "name": "WantItAll",
+                "url": "http://www.wantitall.co.za/Books/Zlaya-Korcha-Russian-Edition__6169071834"
+              }
+            ]
+          },
+          {
+            "country": "Япония",
+            "shops": [
+              {
+                "name": "Amazon.co.jp",
+                "url": "http://www.amazon.co.jp/dp/6169071834"
+              }
+            ]
+          }
+        ],
+        "search": [
+          {
+            "text": "findbookprices.com",
+            "url": "http://www.findbookprices.com/search/?isbn=9786169071839&tab=all"
+          },
+          {
+            "text": "directtextbook.com",
+            "url": "http://www.directtextbook.com/prices/9786169071839"
+          },
+          {
+            "text": "bookfinder.com",
+            "url": "http://www.bookfinder.com/search/?author=&title=&lang=en&isbn=+9786169071839&submit=Search&new_used=*&destination=us&currency=USD&mode=basic&st=sr&ac=qr"
+          },
+          {
+            "text": "isbnsearch.org",
+            "url": "http://www.isbnsearch.org/isbn/9786169071839"
+          },
+          {
+            "text": "dealoz.com",
+            "url": "http://www.dealoz.com/6169071834/ib10"
+          },
+          {
+            "text": "allbookstores.com",
+            "url": "http://www.allbookstores.com/book/compare/6169071834"
+          }
+        ],
+        "universities": [
+          {
+            "text": "Kennesaw State University Bookstore",
+            "url": "http://bookstore.kennesaw.edu/home.aspx"
+          },
+          {
+            "text": "University of Arizona Bookstore",
+            "url": "http://uabookstore.arizona.edu/"
+          },
+          {
+            "text": "North Dakota State University Bookstore",
+            "url": "http://www.ndsubookstore.com/home.aspx"
+          },
+          {
+            "text": "University of Illinois",
+            "url": "http://www.uillinois.edu/"
+          },
+          {
+            "text": "University of Pittsburgh Bookstore",
+            "url": "http://www.pittbookcenter.com/"
+          },
+          {
+            "text": "University of Toronto Bookstore ",
+            "url": "http://www.utoronto.ca/"
+          },
+          {
+            "text": "University of Waterloo Bookstore",
+            "url": "http://www.bookstore.uwaterloo.ca/home.html"
+          }
+        ],
+        "libraries": [
+          {
+            "text": "Michigan State University Library",
+            "url": "http://www.lib.msu.edu/"
+          },
+          {
+            "text": "University of Utah Library",
+            "url": "http://www.lib.utah.edu/"
+          },
+          {
+            "text": "Sacramento Public Library",
+            "url": "http://www.saclibrary.org/"
+          },
+          {
+            "text": "Brooklyn Public Library",
+            "url": "http://www.bklynpubliclibrary.org/"
+          },
+          {
+            "text": "J. Willard Marriott Library",
+            "url": "http://www.lib.utah.edu/"
+          },
+          {
+            "text": "Riverside County Library System",
+            "url": "http://rivlib.info/riverside-county-library-system/ondemand/"
+          }
+        ]
+      }
     },
     {
       "id": "sixth-angel",
@@ -147,6 +667,7 @@
       "year": 2012,
       "isbn": "9786163055330",
       "description": "Рукопись, первую часть которой мы предлагаем читателю, была анонимно прислана в редакцию более года назад вместе с папкой старых газетных вырезок. Редакторский портфель был к тому моменту уже сформирован, поэтому публикация была отложена. К тому же текст представлялся нам излишне сенсационным и конспирологическим, что могло отрицательно сказаться на безупречной репутации нашего издательства. Тем не менее некоторые исторические моменты, обсуждаемые в тексте, показались нам небезынтересными, и мы решили обратиться за консультацией к ведущим специалистам. К сожалению, никто из экспертов так и не смог определенно ответить на поставленные редакцией вопросы. В такой ситуации редколлегия приняла решение издать в сокращенном виде первую часть присланных нам заметок, относящихся, по всей видимости, к 2009 году. Редакция уверена, что описанное в данной книге является несомненной мистификацией и не имеет ничего общего с действительностью. Но мы также надеемся, что наши читатели сами смогут отделить зерна от плевел и найти ответ на вопрос, стоит ли оставлять упомянутые ядовитые плевелы расти на пшеничном поле до жатвы, как учит нас известная библейская притча.",
+      "googleBooksURL": "https://www.google.co.th/books/edition/%D0%A8%D0%B5%D1%81%D1%82%D0%BE%D0%B9_%D0%90%D0%BD%D0%B3%D0%B5%D0%BB/_2RbDwAAQBAJ?hl=en&gbpv=1&dq=%D0%B4%D0%B5%D0%BD%D0%B8%D1%81+%D0%B0%D0%B1%D1%81%D0%B5%D0%BD%D1%82%D0%B8%D1%81&pg=PP1&printsec=frontcover",
       "chapters": [
         {
           "id": "chapter-6",
@@ -163,7 +684,440 @@
           "caption": "Глава 18",
           "title": "Антиквар"
         }
-      ]
+      ],
+      "relatedVideos": [
+        {
+          "name": "Загадки массовых расстрелов 1937 года больше нет?",
+          "description": "",
+          "url": "https://www.youtube.com/embed/UULVay74mFY?si=4wbalQXStrgGXREi"
+        }
+      ],
+      "shops": {
+        "byCountry": [
+          {
+            "country": "Австралия",
+            "shops": [
+              {
+                "name": "Angusrobertson",
+                "url": "https://www.angusrobertson.com.au/books/the-sixth-angel-denis-absentis/p/9786163055330"
+              },
+              {
+                "name": "Booktopia",
+                "url": "https://www.booktopia.com.au/the-sixth-angel-denis-absentis/prod9786163055330.html"
+              },
+              {
+                "name": "Fishpond",
+                "url": "https://www.fishpond.com.au/Books/Sixth-Angel-Denis-Absentis/9786163055330"
+              },
+              {
+                "name": "TheNile",
+                "url": "https://www.thenile.com.au/books/denis-absentis/the-sixth-angel/9786163055330"
+              }
+            ]
+          },
+          {
+            "country": "Австрия",
+            "shops": [
+              {
+                "name": "Thalia.at",
+                "url": "https://www.thalia.at/shop/at_thalia_start/mehrvonartikel/the_sixth_angel/denis_absentis/ISBN616-305-533-0/ID34373179.html"
+              }
+            ]
+          },
+          {
+            "country": "Англия",
+            "shops": [
+              {
+                "name": "Amazon.co.uk",
+                "url": "http://www.amazon.co.uk/Sixth-Angel-Denis-Absentis/dp/6163055330/"
+              },
+              {
+                "name": "BookDepository",
+                "url": "https://www.bookdepository.com/Sixth-Angel-Denis-Absentis/9786163055330/?a_aid=zk"
+              },
+              {
+                "name": "Pickabook",
+                "url": "http://www.pickabook.co.uk/9786163055330.aspx"
+              }
+            ]
+          },
+          {
+            "country": "Германия",
+            "shops": [
+              {
+                "name": "Amazon.de",
+                "url": "https://www.amazon.de/dp/6163055330//"
+              },
+              {
+                "name": "Bol",
+                "url": "https://www.bol.de/shop/buecher/mehrvonartikel/ID34373179.html"
+              },
+              {
+                "name": "Beck-shop.de",
+                "url": "https://www.beck-shop.de/absentis-sixth-angel/productview.aspx?product=12162913"
+              },
+              {
+                "name": "Buch.de",
+                "url": "https://www.buch24.de/shopdirekt.cgi?isbn=6163055330"
+              },
+              {
+                "name": "Buch24.de",
+                "url": "http://www.buch24.de/shopdirekt.cgi?isbn=6163055330"
+              },
+              {
+                "name": "Libri",
+                "url": "https://www.ebook.de/de/product/20266180/denis_absentis_the_sixth_angel.html"
+              },
+              {
+                "name": "Thalia",
+                "url": "https://www.thalia.de/shop/de_buch_start/mehrvonartikel/the_sixth_angel/denis_absentis/ISBN616-305-533-0/ID34373179.html"
+              }
+            ]
+          },
+          {
+            "country": "Дания",
+            "shops": [
+              {
+                "name": "Saxo",
+                "url": "https://www.saxo.com/dk/the-sixth-angel_denis-absentis_paperback_9786163055330"
+              }
+            ]
+          },
+          {
+            "country": "Индия",
+            "shops": [
+              {
+                "name": "Sapnaonline",
+                "url": "https://www.sapnaonline.com/books/sixth-angel-russian-edition-denis-absentis-6163055330-9786163055330"
+              },
+              {
+                "name": "Junglee",
+                "url": "https://www.junglee.com/The-Sixth-Angel-Russian-Edition/dp/6163055330/262-3160179-1932839"
+              },
+              {
+                "name": "uRead",
+                "url": "http://www.uread.com/book/sixth-angel-denis-absentis/9786163055330"
+              }
+            ]
+          },
+          {
+            "country": "Индонезия",
+            "shops": [
+              {
+                "name": "Opentrolley",
+                "url": "https://opentrolley.co.id/Book_Detail.aspx?EAN=9786163055330"
+              }
+            ]
+          },
+          {
+            "country": "Испания",
+            "shops": [
+              {
+                "name": "Amazon.es",
+                "url": "https://www.amazon.es/Sixth-Angel-Denis-Absentis/dp/6163055330/"
+              },
+              {
+                "name": "Agapea",
+                "url": "https://www.agapea.com/libros/The-Sixth-Angel-9786163055330-i.htm"
+              }
+            ]
+          },
+          {
+            "country": "Италия",
+            "shops": [
+              {
+                "name": "Amazon.it",
+                "url": "http://www.amazon.it/gp/product/6163055330/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=zlaykorc02-21&linkCode=as2&camp=3370&creative=23322&creativeASIN=6169071834"
+              },
+              {
+                "name": "InMondadori",
+                "url": "https://books.mondadoristore.it/The-Sixth-Angel-Denis-Absentis/eae978616305533/"
+              }
+            ]
+          },
+          {
+            "country": "Канада",
+            "shops": [
+              {
+                "name": "Amazon.ca",
+                "url": "http://www.amazon.ca/The-Sixth-Angel-Denis-Absentis/dp/6163055330/"
+              },
+              {
+                "name": "McNally Robinson",
+                "url": "https://www.mcnallyrobinson.com/9786163055330/denis-absentis/sixth-angel"
+              }
+            ]
+          },
+          {
+            "country": "Китай",
+            "shops": [
+              {
+                "name": "Amazon.cn",
+                "url": "http://www.amazon.cn/The-Sixth-Angel-Absentis-Denis/dp/6163055330/"
+              }
+            ]
+          },
+          {
+            "country": "Латвия",
+            "shops": [
+              {
+                "name": "Krisostomus",
+                "url": "https://www.kriso.ee/sixth-angel-db-9786163055330.html"
+              }
+            ]
+          },
+          {
+            "country": "Новая Зеландия",
+            "shops": [
+              {
+                "name": "Fishpond",
+                "url": "https://www.fishpond.co.nz/Books/Sixth-Angel-Denis-Absentis/9786163055330"
+              },
+              {
+                "name": "TheNile",
+                "url": "https://www.thenile.co.nz/books/denis-absentis/the-sixth-angel/9786163055330"
+              },
+              {
+                "name": "Wheelers",
+                "url": "https://www.wheelers.co.nz/books/9786163055330-sixth-angel-the/"
+              }
+            ]
+          },
+          {
+            "country": "Норвегия",
+            "shops": [
+              {
+                "name": "Bokklubben",
+                "url": "https://www.bokklubben.no/thriller-agenter-og-spioner/the-sixth-angel-denis-absentis/produkt.do?produktId=8758694"
+              },
+              {
+                "name": "Adlibris",
+                "url": "https://www.adlibris.com/no/bok/the-sixth-angel-9786163055330"
+              },
+              {
+                "name": "Akademika",
+                "url": "https://www.akademika.no/sixth-angel/absentis-denis/9786163055330"
+              }
+            ]
+          },
+          {
+            "country": "ОАЭ",
+            "shops": [
+              {
+                "name": "Magrudy's",
+                "url": "https://magrudy.com/book/the-sixth-angel-9786163055330/"
+              }
+            ]
+          },
+          {
+            "country": "Польша",
+            "shops": [
+              {
+                "name": "Bookcity",
+                "url": "https://www.bookcity.pl/the-sixth-angel-denis-absentis/pid/A20926219"
+              },
+              {
+                "name": "Krainaksiazek",
+                "url": "http://krainaksiazek.pl/The-Sixth-Angel,9786163055330.html"
+              }
+            ]
+          },
+          {
+            "country": "Россия",
+            "shops": [
+              {
+                "name": "Books.ru",
+                "url": "http://www.books.ru/books/shestoi-angel-860/?customer_product=1&partner=1012178"
+              },
+              {
+                "name": "Wildberries",
+                "url": "https://www.wildberries.ru/catalog/21886748/detail.aspx"
+              },
+              {
+                "name": "Буквоед",
+                "url": "https://www.bookvoed.ru/book?id=8707941"
+              },
+              {
+                "name": "Москва",
+                "url": "https://www.moscowbooks.ru/pod/book/4164068/"
+              },
+              {
+                "name": "Озон",
+                "url": "http://www.ozon.ru/context/detail/id/31530428/?partner=bookprint"
+              },
+              {
+                "name": "Сбермаркет",
+                "url": "https://sbermegamarket.ru/catalog/details/the-sixth-angel-100024490243/"
+              }
+            ]
+          },
+          {
+            "country": "Румыния",
+            "shops": [
+              {
+                "name": "BookExpress",
+                "url": "https://www.books-express.ro/the-sixth-angel/p/fhd,9786163055330"
+              }
+            ]
+          },
+          {
+            "country": "Сингапур",
+            "shops": [
+              {
+                "name": "Opentrolley",
+                "url": "https://opentrolley.com.sg/Book_Detail.aspx?EAN=9786163055330"
+              }
+            ]
+          },
+          {
+            "country": "Словакия",
+            "shops": [
+              {
+                "name": "Megabooks",
+                "url": "https://www.megabooks.sk/p/131375/sixth-angel"
+              }
+            ]
+          },
+          {
+            "country": "США",
+            "shops": [
+              {
+                "name": "Alibris",
+                "url": "https://www.alibris.com/The-Sixth-Angel-Denis-Absentis/book/24127078"
+              },
+              {
+                "name": "Amazon.com",
+                "url": "http://www.amazon.com/gp/product/6163055330/ref=as_li_qf_sp_asin_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=6163055330&linkCode=as2&tag=zlaykorc-20"
+              },
+              {
+                "name": "Barnes & Noble",
+                "url": "https://www.barnesandnoble.com/w/the-sixth-angel-denis-absentis/1114254292"
+              },
+              {
+                "name": "Bookbyte",
+                "url": "http://www.bookbyte.com/textbooks/the-sixth-angel-russian-edition/9786163055330-6163055330"
+              },
+              {
+                "name": "Books-A-Million",
+                "url": "http://www.booksamillion.com/product/9786163055330"
+              },
+              {
+                "name": "Powell's",
+                "url": "http://www.powells.com/partner/36639/biblio/9786163055330?p_isbn"
+              },
+              {
+                "name": "Valley",
+                "url": "https://www.valleybookseller.com/book/9781482072594"
+              },
+              {
+                "name": "West",
+                "url": "http://www.bookshopwestportal.com/book/9786163055330"
+              }            
+            ]
+          },
+          {
+            "country": "Финляндия",
+            "shops": [
+              {
+                "name": "Adlibris",
+                "url": "https://www.adlibris.com/fi/kirja/the-sixth-angel-9786163055330"
+              },
+              {
+                "name": "Suomalainen",
+                "url": "http://www.suomalainen.com/product-sku-P9786163055330"
+              }
+            ]
+          },
+          {
+            "country": "Франция",
+            "shops": [
+              {
+                "name": "Amazon.fr",
+                "url": "http://www.amazon.fr/gp/product/6163055330/ref=olp_product_details?ie=UTF8&me=&tag=zlaykorc0c2-21"
+              }
+            ]
+          },
+          {
+            "country": "Швейцария",
+            "shops": [
+              {
+                "name": "1advd",
+                "url": "http://www.1advd.ch/defaultB.asp?idlnk=14523251-The+Sixth+Angel+Buch"
+              },
+              
+              {
+                "name": "buch.ch",
+                "url": "https://www.orellfuessli.ch/shop/bch_buc_startseite/empfehlungsartikel/the_sixth_angel/denis_absentis/ISBN616-305-533-0/ID34373179.html"
+              },
+              {
+                "name": "Lehmanns.ch",
+                "url": "https://www.lehmanns.ch/shop/literatur/26509467-9786163055330-sixth-angel"
+              }
+            ]
+          },
+          {
+            "country": "Швеция",
+            "shops": [
+              {
+                "name": "Adlibris",
+                "url": "http://www.adlibris.com/se/product.aspx?isbn=6163055330"
+              },
+              {
+                "name": "Bokus",
+                "url": "http://www.bokus.com/bok/9786163055330/the-sixth-angel/"
+              }
+            ]
+          },
+          {
+            "country": "ЮАР",
+            "shops": [
+              {
+                "name": "Loot.co.za",
+                "url": "https://www.loot.co.za/product/denis-absentis-the-sixth-angel/ctck-2519-g0a0"
+              },
+              {
+                "name": "Takealot",
+                "url": "https://www.takealot.com/the-sixth-angel/PLID36045647"
+              }
+            ]
+          },
+          {
+            "country": "Япония",
+            "shops": [
+              {
+                "name": "Amazon.co.jp",
+                "url": "http://www.amazon.co.jp/The-Sixth-Angel-Denis-Absentis/dp/6163055330/"
+              }
+            ]
+          }
+        ],
+        "search": [
+          {
+            "text": "eurobuch.com",
+            "url": "https://www.eurobuch.com/buch/isbn/6163055330.html"
+          },
+          {
+            "text": "findbookprices.com",
+            "url": "http://www.findbookprices.com/search/?isbn=9786163055330&tab=all"
+          },
+          {
+            "text": "directtextbook.com",
+            "url": "http://www.directtextbook.com/prices/9786163055330"
+          },
+          {
+            "text": "bookfinder.com",
+            "url": "http://www.bookfinder.com/search/?author=&title=&lang=en&isbn=+9786163055330&submit=Search&new_used=*&destination=us&currency=USD&mode=basic&st=sr&ac=qr"
+          },
+          {
+            "text": "dealoz.com",
+            "url": "http://www.dealoz.com/6163055330/ib10"
+          },
+          {
+            "text": "allbookstores.com",
+            "url": "http://www.allbookstores.com/book/compare/6163055330"
+          }
+        ]
+      }      
     },
     {
       "id": "zlaya-korcha-2",
@@ -172,6 +1126,7 @@
       "year": 2015,
       "isbn": "9786163051646",
       "description": "",
+      "googleBooksURL": "https://www.google.co.th/books/edition/%D0%97%D0%BB%D0%B0%D1%8F_%D0%9A%D0%BE%D1%80%D1%87%D0%B0/dIhcDwAAQBAJ?hl=en&gbpv=1&dq=%D0%B4%D0%B5%D0%BD%D0%B8%D1%81+%D0%B0%D0%B1%D1%81%D0%B5%D0%BD%D1%82%D0%B8%D1%81&pg=PP2&printsec=frontcover",
       "chapters": [
         {
           "id": "preface",
@@ -193,7 +1148,311 @@
           "caption": "Глава 10",
           "title": "Урал и Манчестер: эпидемии 1926-1927 гг."
         }
-      ]
+      ],
+      "shops": {
+        "byCountry": [
+          {
+            "country": "Австралия",
+            "shops": [            
+              {
+                "name": "Fishpond",
+                "url": "https://www.fishpond.com.au/Books/Zlaya-Korcha-Denis-Absentis/9786163051646"
+              },
+              {
+                "name": "Booktopia",
+                "url": "https://www.booktopia.com.au/zlaya-korcha-denis-absentis/prod9786163051646.html"
+              }
+            ]
+          },
+          {
+            "country": "Австрия",
+            "shops": [
+              {
+                "name": "Thalia.at",
+                "url": "https://www.thalia.at/shop/home/artikeldetails/ID139490474.html"
+              }
+            ]
+          },
+          {
+            "country": "Англия",
+            "shops": [
+              {
+                "name": "Amazon.co.uk",
+                "url": "https://www.amazon.co.uk/Zlaya-Korcha-insanity-Denis-Absentis/dp/6163051645"
+              },
+              {
+                "name": "BookDepository",
+                "url": "https://www.bookdepository.com/Zlaya-Korcha-Denis-Absentis/9786163051646"
+              },
+              {
+                "name": "Waterstones",
+                "url": "https://www.waterstones.com/book/zlaya-korcha/denis-absentis/9786163051646"
+              },
+              {
+                "name": "Pick-a-book",
+                "url": "http://www.pickabook.co.uk/9786163051646.aspx"
+              }
+            ]
+          },
+          {
+            "country": "Бразилия",
+            "shops": [
+              {
+                "name": "Amazon",
+                "url": "https://www.amazon.com.br/Zlaya-Korcha-insanity-Denis-Absentis/dp/6163051645"
+              }
+            ]
+          },
+          {
+            "country": "Германия",
+            "shops": [
+              {
+                "name": "Bol",
+                "url": "https://www.bol.de/shop/home/artikeldetails/ID139490474.html"
+              },
+              {
+                "name": "Buecher",
+                "url": "https://www.buecher.de/shop/buecher/zlaya-korcha-cycles-of-insanity/absentis-denis/products_products/detail/prod_id/53921383/"
+              },
+              {
+                "name": "Thalia.de",
+                "url": "https://www.thalia.de/shop/home/artikeldetails/ID139490474.html"
+              }
+            ]
+          },
+          {
+            "country": "Дания",
+            "shops": [
+              {
+                "name": "Saxo",
+                "url": "https://www.saxo.com/dk/zlaya-korcha_denis-absentis_paperback_9786163051646"
+              }
+            ]
+          },
+          {
+            "country": "Индия",
+            "shops": [
+              {
+                "name": "Flipkart",
+                "url": "https://www.flipkart.com/zlaya-korcha/p/itmd44agauvcmjjz"
+              }
+            ]
+          },
+          {
+            "country": "Индонезия",
+            "shops": [
+              {
+                "name": "Opentrolley",
+                "url": "https://opentrolley.co.id/Book_Detail.aspx?EAN=9786163051646"
+              }
+            ]
+          },
+          {
+            "country": "Испания",
+            "shops": [
+              {
+                "name": "Amazon.es",
+                "url": "https://www.amazon.es/Zlaya-Korcha-Cycles-insanity-2/dp/1720971951/ref=asap_bc?ie=UTF8"
+              }
+            ]
+          },
+          {
+            "country": "Италия",
+            "shops": [
+              {
+                "name": "Amazon.it",
+                "url": "https://www.amazon.it/Zlaya-Korcha-Cycles-insanity-2/dp/1720971951/ref=asap_bc?ie=UTF8"
+              },
+              {
+                "name": "Mondadori",
+                "url": "https://books.mondadoristore.it/Zlaya-Korcha-Denis-Absentis/eae978616305164/"
+              }
+            ]
+          },
+          {
+            "country": "Казахстан",
+            "shops": [
+              {
+                "name": "FLiP.kz",
+                "url": "http://www.flip.kz/catalog?prod=239245"
+              }
+            ]
+          },
+          {
+            "country": "Канада",
+            "shops": [
+              {
+                "name": "Amazon.ca",
+                "url": "https://www.amazon.ca/Zlaya-Korcha-Insanity-Denis-Absentis/dp/6163051645/ref=sr_1_1?s=books&ie=UTF8&qid=1537443312&sr=1-1"
+              }
+            ]
+          },
+          {
+            "country": "Новая Зеландия",
+            "shops": [
+              {
+                "name": "Academybooks.co.nz",
+                "url": "http://www.academybooks.co.nz/product/isbn/9786163051646/"
+              }
+            ]
+          },
+          {
+            "country": "Норвегия",
+            "shops": [
+              {
+                "name": "Capris",
+                "url": "https://www.adlibris.com/no/bok/zlaya-korcha-9785519546461"
+              }
+            ]
+          },
+          {
+            "country": "Польша",
+            "shops": [
+              {
+                "name": "Bookcity",
+                "url": "https://www.bookcity.pl/zlaya-korcha-cycles-of-insanity-denis-absentis/pid/A34900494"
+              },
+              {
+                "name": "Krainaksiazek",
+                "url": "https://krainaksiazek.pl/Zlaya-Korcha-Cycles-of-Insanity,9786163051646.html"
+              }
+            ]
+          },
+          {
+            "country": "Россия",
+            "shops": [
+              {
+                "name": "Буквоед",
+                "url": "https://www.bookvoed.ru/book?id=12009897"
+              },
+              {
+                "name": "Озон",
+                "url": "https://www.ozon.ru/product/zlaya-korcha-cycles-of-insanity-242847233/?partner=bookprint"
+              }
+            ]
+          },
+          {
+            "country": "США",
+            "shops": [
+              {
+                "name": "Alibris",
+                "url": "http://www.alibris.com/booksearch?qsort=p&isbn=9786163051646"
+              },
+              {
+                "name": "Amazon.com",
+                "url": "https://amzn.to/2SpsLGa"
+              },
+              {
+                "name": "BetterWorld",
+                "url": "https://www.betterworldbooks.com/product/detail/Zlaya-Korcha--Cycles-of-insanity--Volume-2---Russian-Edition--9781720971955"
+              },
+              {
+                "name": "Books-A-Million",
+                "url": "http://www.booksamillion.com/product/9786163051646"
+              },
+              {
+                "name": "ShopWest",
+                "url": "https://www.bookshopwestportal.com/book/9786163051646"
+              },
+              {
+                "name": "Indiebound",
+                "url": "http://www.indiebound.org/book/9786163051646"
+              },
+              {
+                "name": "Powell's",
+                "url": "http://www.powells.com/partner/36639/biblio/9786163051646?p_isbn"
+              },
+              {
+                "name": "Walmart",
+                "url": "https://www.walmart.com/ip/Zlaya-Korcha-Cycles-of-Insanity/330972608"
+              }            
+            ]
+          },
+          {
+            "country": "Украина:",
+            "shops": [
+              {
+                "name": "BamBook",
+                "url": "http://www.bambook.com/scripts/pos.showitem?v=1&ite=151026"
+              },
+              {
+                "name": "Topbooks",
+                "url": "http://topbooks.com.ua/ru/katalog_knig/hudozhestvennaja_literatura/zlaja_korcha_.htm"
+              },
+              {
+                "name": "Одиссей",
+                "url": "http://odissey.kiev.ua/product_713529.html"
+              }
+            ]
+          },
+          {
+            "country": "Финляндия",
+            "shops": [
+              {
+                "name": "Adlibris",
+                "url": "https://www.adlibris.com/fi/kirja/zlaya-korcha-cycles-of-insanity-9786163051646"
+              }
+            ]
+          },
+          {
+            "country": "Швейцария",
+            "shops": [
+              {
+                "name": "Orellfuessl",
+                "url": "https://www.orellfuessli.ch/shop/home/artikeldetails/ID139490474.html"
+              },
+              {
+                "name": "Lehmanns.ch",
+                "url": "http://www.lehmanns.ch/shop/medizin-pharmazie/21549934-9786169071839-zlaya-korcha"
+              },
+              {
+                "name": "Thalia.ch",
+                "url": "http://www.thalia.ch/shop/jae_buc_startseite/mehrvonartikel/zlaya_korcha/denis_absentis/EAN9786169071839/ID30566534.html"
+              }            
+            ]
+          },
+          {
+            "country": "Швеция",
+            "shops": [
+              {
+                "name": "Adlibris",
+                "url": "https://www.adlibris.com/se/bok/zlaya-korcha-cycles-of-insanity-9786163051646"
+              },
+              {
+                "name": "Bokus",
+                "url": "https://www.bokus.com/bok/9786163051646/zlaya-korcha/"
+              }
+            ]
+          },
+          {
+            "country": "Эстония",
+            "shops": [
+              {
+                "name": "Krisostomus",
+                "url": "https://www.kriso.ee/zlaya-korcha-cycles-insanity-db-9786163051646.html?id=Zmas8URU"
+              }
+            ]
+          },
+          {
+            "country": "ЮАР",
+            "shops": [
+              {
+                "name": "Loot.co.za",
+                "url": "https://www.loot.co.za/product/denis-absentis-zlaya-korcha/rfdj-5769-ga10"
+              }
+            ]
+          },
+          {
+            "country": "Япония",
+            "shops": [
+              {
+                "name": "Amazon.co.jp",
+                "url": "https://www.amazon.co.jp/Zlaya-Korcha-Insanity-Denis-Absentis/dp/6163051645/"
+              }
+            ]
+          }
+        ]
+      } 
     },
     {
       "id": "zlaya-korcha-3",

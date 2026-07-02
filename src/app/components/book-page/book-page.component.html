@@ -2,8 +2,19 @@
 
   @if (book(); as book) {
 
+    <!-- Data -->
     <div class="book-data-container">
-      <img src="img/books/{{ book.id }}.webp" [alt]="book.title" />
+      <div>
+        <img class="cover" src="img/books/{{ book.id }}.webp" [alt]="book.title" />
+        @if (book.googleBooksURL) {
+          <div class="link-container">
+            <a class="google-books-link" [href]="book.googleBooksURL" target="_blank">
+              <span>Google Books</span>
+              <img class="icon" src="img/icons/external-link.svg" alt="" />
+            </a>
+          </div>
+        }        
+      </div>
       <div class="book-data">
         <table>
           <tr>
@@ -23,22 +34,110 @@
       </div>
     </div>
 
-    <h2>
-      <ng-container>Отдельные главы</ng-container>
-      <div class="underline"></div>
-    </h2>
+    <!-- Chapters -->
+    @if (book.chapters && book.chapters.length > 0) {
+      <h2>
+        <ng-container>Отдельные главы</ng-container>
+        <div class="underline"></div>
+      </h2>
+      <div class="book-chapters">
+        @for (chapter of book.chapters; track chapter.id) {
+          <a class="chapter" [routerLink]="chapter.id" draggable="false">
+            <img src="img/books/{{ book.id }}/{{ chapter.id }}.webp" alt="" />
+            <div class="card-data">
+              <div class="caption">{{ chapter.caption }}</div>
+              <div>{{ chapter.title }}</div>
+            </div>
+          </a>
+        }
+      </div>
+    }
 
-    <div class="book-chapters">
-      @for (chapter of book.chapters; track chapter.id) {
-        <a class="chapter" [routerLink]="chapter.id" draggable="false">
-          <img src="img/books/{{ book.id }}/{{ chapter.id }}.webp" alt="" />
-          <div class="card-data">
-            <div class="caption">{{ chapter.caption }}</div>
-            <div>{{ chapter.title }}</div>
+    <!-- Related Videos -->
+    @if (book.relatedVideos && book.relatedVideos.length > 0) {
+      <h2>
+        <ng-container>Видео</ng-container>
+        <div class="underline"></div>
+      </h2>
+      @for (video of book.relatedVideos; track $index) {
+        <div class="video-container">
+          <div class="video-data">
+            <div class="video-header">
+              {{ video.name }}
+              @if (video.year) {
+                <span>({{ video.year }})</span>
+              }
+            </div>
+            <div>{{ video.description }}</div>
           </div>
-        </a>
+          <iframe
+            width="560"
+            height="315"
+            [src]="videoURL()[video.url]"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
       }
-    </div>
+    }
+
+    <!-- Shops -->
+    @if (book.shops) {
+      <h2>
+        <ng-container>Где купить</ng-container>
+        <div class="underline"></div>
+      </h2>
+      <div class="shops-container">
+        @if (book.shops.byCountry.length > 0) {
+          @for (country of book.shops.byCountry; track $index) {
+            <div class="row">
+              <div class="country-name">{{ country.country }}</div>
+              <div class="shops">
+                @for (shop of country.shops; track $index) {
+                  <a class="shop" [href]="shop.url" target="_blank">{{ shop.name }}</a>
+                }
+              </div>
+            </div>
+          }
+        }
+        @if (book.shops.search && book.shops.search.length > 0) {
+          <div class="shops-block">
+            <div class="block-header">Поиск</div>
+            <div class="search-content">
+              @for (link of book.shops.search; track $index) {
+                <a class="search-link" [href]="link.url" target="_blank">{{ link.text }}</a>
+              }
+            </div>
+          </div>
+        }
+        @if (book.shops.universities) {
+          <div class="shops-block half">
+            <div class="block-header">Университеты</div>
+            <ul>
+              @for (uni of book.shops.universities; track $index) {
+                <li>
+                  <a [href]="uni.url" target="_blank">{{ uni.text }}</a>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+        @if (book.shops.libraries) {
+          <div class="shops-block half">
+            <div class="block-header">Библиотеки</div>
+            <ul>
+              @for (library of book.shops.libraries; track $index) {
+                <li>
+                  <a [href]="library.url" target="_blank">{{ library.text }}</a>
+                </li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    }
   }
-  
 </div>

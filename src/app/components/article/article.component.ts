@@ -9,8 +9,8 @@ import { InlineElement } from '../../constants/inline-element.enum';
 import { ImagePosition } from '../../constants/image-position.enum';
 import { Article } from '../../types/article/article.interface';
 import { DataFetchService } from '../../services/data-fetch.service';
-import { Book } from '../../types/book.interface';
-import { Material } from '../../types/material.interface';
+import { Book } from '../../types/book/book.interface';
+import { Material } from '../../types/material/material.interface';
 
 interface ArticleData {
   article: Signal<Article | null>;

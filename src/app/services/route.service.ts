@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router, Route } from '@angular/router';
 import { ContentList } from '../types/content-list.interface';
-import { Book } from '../types/book.interface';
-import { Material } from '../types/material.interface';
+import { Book } from '../types/book/book.interface';
+import { Material } from '../types/material/material.interface';
 import { BookPageComponent } from '../components/book-page/book-page.component';
 import { MaterialPageComponent } from '../components/material-page/material-page.component';
 import { ArticleComponent } from '../components/article/article.component';
-import { BookChapter } from '../types/book-chapter.interface';
-import { MaterialPart } from '../types/material-part.interface';
+import { BookChapter } from '../types/book/book-chapter.interface';
+import { MaterialPart } from '../types/material/material-part.interface';
 
 @Injectable({
   providedIn: 'root'

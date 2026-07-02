@@ -1,5 +1,5 @@
 import { Component, Signal } from '@angular/core';
-import { Material } from '../../types/material.interface';
+import { Material } from '../../types/material/material.interface';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';

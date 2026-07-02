@@ -105,6 +105,9 @@
   transition: .5s;
   overflow-y: scroll;
   @include no-scroll-bar;
+  @include mobile {
+    border-left: none;
+  }
   & > * {
     opacity: 0;
     transition: .2s;
@@ -123,7 +126,6 @@
     }
     @include mobile {
       width: calc(100% + 5px);
-      border-left: none;
     }
   }
   h2 {
@@ -151,6 +153,7 @@
       font-size: 22px;
     }
     @include tablet {
+      margin-top: 10px;
       font-size: 18px;
     }
   }

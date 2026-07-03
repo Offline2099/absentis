@@ -2,6 +2,9 @@
 
 :host {
   @include page;
+  &.no-animation {
+    animation: none;
+  }
 }
 
 .column {
@@ -14,6 +17,7 @@
   margin-bottom: 80px;
   color: $text-normal;
   letter-spacing: 0.02em;
+  animation: fade-in 1s;
   & > * {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -26,6 +30,9 @@
   justify-content: space-between;
   &:first-child {
     margin-top: 0 !important;
+    @include mobile {
+      padding-right: 50px;
+    }
   }
   &:last-child {
     margin-top: auto !important;
@@ -47,6 +54,19 @@
     letter-spacing: .03em;
     transition: .2s;
     cursor: pointer;
+    &.no-transitions {
+      transition: none;
+    }
+    .arrow {
+      height: 20px;
+      font-size: 24px;
+      line-height: .5;
+      @include mobile {
+        height: 16px;
+        font-size: 20px;
+        line-height: .5;
+      }
+    }
     @include hover {
       color: $text-dark;
     }

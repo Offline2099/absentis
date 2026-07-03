@@ -1,16 +1,16 @@
-import { Component, computed, signal, Signal } from '@angular/core';
+import { Component, Signal, signal, computed } from '@angular/core';
 import { NgClass, NgTemplateOutlet, ViewportScroller } from '@angular/common';
-import { ActivatedRoute, Data, RouterLink } from '@angular/router';
+import { ActivatedRoute, Data, Router, RouterLink } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { map } from 'rxjs';
+import { map, take, timer } from 'rxjs';
 import { ArticleElement } from '../../constants/article-element.enum';
 import { InlineElement } from '../../constants/inline-element.enum';
 import { ImagePosition } from '../../constants/image-position.enum';
 import { Article } from '../../types/article/article.interface';
-import { DataFetchService } from '../../services/data-fetch.service';
 import { Book } from '../../types/book/book.interface';
 import { Material } from '../../types/material/material.interface';
+import { DataFetchService } from '../../services/data-fetch.service';
 
 interface ArticleData {
   article: Signal<Article | null>;
@@ -26,6 +26,9 @@ interface AdjacentId {
 
 @Component({
   selector: 'app-article',
+  host: {
+    '[class.no-animation]': 'isSameEntity',
+  },
   imports: [NgClass, NgTemplateOutlet, RouterLink],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss',
@@ -37,16 +40,20 @@ export class ArticleComponent {
   readonly ImagePosition = ImagePosition;
 
   articleData: ArticleData | null = null;
+  isSameEntity: boolean;
+  noTransitions = signal<boolean>(true);
   videoURL: Signal<Record<string, SafeResourceUrl>>;
   selectedReferenceId: Signal<number | string | null>;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private data: DataFetchService,
     private sanitizer: DomSanitizer,
     private scroller: ViewportScroller
   ) {
     this.articleData = this.getArticleData(this.route.snapshot.data);
+    this.isSameEntity = this.isNavigationFromSameEntity();
     this.videoURL = computed<Record<string, SafeResourceUrl>>(() => 
       this.articleData?.article() ? this.extractVideoURLs(this.articleData.article()!) : {}
     );
@@ -55,6 +62,7 @@ export class ArticleComponent {
       { initialValue: null }
     );
     this.scroller.setOffset([0, 60]);
+    timer(200).pipe(take(1)).subscribe(() => this.noTransitions.set(false));
   }
 
   getArticleData(routeData: Data): ArticleData {
@@ -68,6 +76,17 @@ export class ArticleComponent {
       previousId: signal(adjacentId?.previous || null),
       nextId: signal(adjacentId?.next || null)
     };
+  }
+
+  isNavigationFromSameEntity(): boolean {
+    const currentUrl: string[] = this.router.url.split('/');
+    if (currentUrl.length < 2) return false;
+    const currentEntityId: string = currentUrl[currentUrl.length - 2];
+    const previousUrl: string[] | undefined = 
+      this.router.currentNavigation()?.previousNavigation?.finalUrl?.toString().split('/');
+    if (!previousUrl || previousUrl.length < 2) return false;
+    const previousEntityId: string = previousUrl[previousUrl.length - 2];
+    return currentEntityId === previousEntityId;
   }
 
   getAdjacentId(entity?: Book | Material, currentId?: string): AdjacentId | null {

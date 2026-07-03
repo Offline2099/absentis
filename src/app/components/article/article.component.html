@@ -178,14 +178,14 @@
 <ng-template #nav let-entityId="entityId" let-previousId="previousId" let-nextId="nextId">
   <nav class="navigation">
     <a [routerLink]="['/', entityId, previousId]" [ngClass]="{ 'disabled': previousId === null }">
-      <button type="button">
-        <div>&larr;</div>
+      <button type="button" [ngClass]="{ 'no-transitions': noTransitions() }">
+        <div class="arrow">&larr;</div>
         <div>Предыдущая</div>
       </button>
     </a>
     <a [routerLink]="['/', entityId, nextId]" [ngClass]="{ 'disabled': nextId === null }">
-      <button type="button" >
-        <div>&rarr;</div>
+      <button type="button" [ngClass]="{ 'no-transitions': noTransitions() }" >
+        <div class="arrow">&rarr;</div>
         <div>Следующая</div>
       </button>
     </a>

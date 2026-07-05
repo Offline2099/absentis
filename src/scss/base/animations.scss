@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes grow-vertical {
   0% {
     transform: scaleY(0);

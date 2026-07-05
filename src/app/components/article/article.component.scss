@@ -70,7 +70,7 @@
 }
 
 //=============================================================================
-//  Content Wrapper
+//  Content Wrapper & Placeholder
 //=============================================================================
 
 .column-content {
@@ -82,6 +82,13 @@
     margin-top: 10px;
     margin-bottom: 10px;
   }
+}
+
+.spinner {
+  display: block;
+  margin: 30vh auto !important;
+  animation: spin 3s linear infinite;
+  @include square (200px);
 }
 
 //=============================================================================

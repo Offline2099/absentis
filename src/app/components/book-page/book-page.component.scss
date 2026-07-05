@@ -5,81 +5,9 @@
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
   @include column;
   & > *:last-child {
     margin-bottom: 80px;
-  }
-}
-
-.book-data-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 10px;
-  border-radius: 6px;
-  background-color: $bg-normal;
-  color: $text-normal;
-  @include tablet {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .cover {
-    display: block;
-    width: 240px;
-    border-radius: 4px;
-    transition: .2s;
-    @include hover {
-      filter: brightness(1.1);
-    }
-  }
-  .link-container {
-    text-align: center;
-    .google-books-link {
-      display: inline-flex;
-      align-items: center;
-      margin: 15px 0 5px 0;
-      color: $text-darker;
-      transition: .2s;
-      .icon {
-        width: 16px;
-        height: 16px;
-        margin-left: 10px;
-        margin-bottom: 1px;
-      }
-      @include hover {
-        filter: brightness(1.2);
-      }
-    }
-  }
-  .book-data {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: auto;
-    @include mobile {
-      gap: 10px;
-    }
-  }
-  table {
-    width: 100%;
-    th, td {
-      padding: 2px 5px;
-      background-color: $bg-bright;
-      transition: .2s;
-      @include hover {
-        filter: brightness(1.1);
-      }
-    }
-    th {
-      width: 150px;
-      text-align: left;
-    }
-  }
-  p {
-    padding: 0 2px;
   }
 }
 
@@ -99,99 +27,132 @@ h2 {
   }
 }
 
-.book-chapters {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+//=============================================================================
+//  Book Data & Chapters
+//=============================================================================
+
+.book-data-container {
+  display: flex;
+  align-items: center;
   gap: 20px;
-  padding: 0 15px;
-  .chapter {
-    display: flex;
-    @include card-horizontal;
-    img {
-      width: 100px;
-      height: 100px;
-    }
-    .card-data {
-      padding: 5px 5px 5px 10px;
-      letter-spacing: 0.03em;
-    }
-    .caption {
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
+  padding: 10px;
+  @include page-block;
+  @include mobile {
+    gap: 10px;
   }
   @include tablet {
-    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  @include mobile {
-    grid-template-columns: 1fr;
+  .book-data-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    &.right {
+      margin-bottom: auto;
+      flex-grow: 1;
+    }
+    @include mobile {
+      gap: 10px;
+    }
+  }
+  .cover {
+    display: block;
+    width: 240px;
+    aspect-ratio: 204 / 291;
+    border-radius: 4px;
+    transition: .2s;
+    @include hover {
+      filter: brightness(1.1);
+    }
+  }
+  .link-container {
+    text-align: center;
+    .google-books-link {
+      display: inline-flex;
+      align-items: center;
+      color: $text-darker;
+      transition: .2s;
+      .icon {
+        margin-left: 10px;
+        margin-bottom: 1px;
+        @include square(16px);
+      }
+      @include hover {
+        filter: brightness(1.2);
+      }
+    }
+  }
+  table {
+    width: 100%;
+    th, td {
+      padding: 2px 5px;
+      background-color: $bg-bright;
+      transition: .2s;
+      @include hover {
+        filter: brightness(1.1);
+      }
+    }
+    th {
+      width: 150px;
+      text-align: left;
+      @include mobile {
+        width: 120px;
+      }
+    }
+  }
+  p {
+    padding: 0 2px;
   }
 }
 
-@mixin mini-header {
-  padding: 2px 10px;
-  background-color: $bg-bright;
-  font-size: 18px;
-  font-variant: small-caps;
-  span {
-    font-size: smaller;
-  }
-  @include mobile {
-    font-size: 16px;
-  }
+.book-chapters {
+  @include card-container;
 }
+
+//=============================================================================
+//  Related Video
+//=============================================================================
 
 .video-container {
   display: flex;
   gap: 20px;
   padding: 10px;
-  border-radius: 6px;
-  background-color: $bg-normal;
-  color: $text-normal;
-  .video-data {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    .video-header {
-      @include mini-header;
-    }
-  }
-  iframe {
-    flex-shrink: 0;
-    max-width: 100%;
-    border-radius: 6px;
-  }
+  @include page-block;
   @include tablet {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
   }
-}
-
-@mixin link-container {
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: wrap;
-  gap: 3px 4px;
-}
-
-@mixin inline-link {
-  padding: 1px 5px;
-  border-radius: 4px;
-  background-color: $bg-bright;
-  color: $text-darker;
-  transition: .2s;
-  @include hover {
-    color: $text-hovered;
+  .video-data {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .video-header {
+      @include block-header;
+    }
+  }
+  iframe {
+    flex-shrink: 0;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
   }
 }
+
+//=============================================================================
+//  Shops
+//=============================================================================
 
 .shops-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
-  padding: 0 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 6px;
   color: $text-normal;
+  overflow: hidden;
   .row {
     display: flex;
     width: 100%;
@@ -199,37 +160,36 @@ h2 {
     & > * {
       background-color: $bg-normal;
     }
-  }
-  .country-name {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    padding: 2px 10px;
-    width: 150px;
-    @include mobile {
-      width: 110px;
+    .country-name {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 2px 10px;
+      width: 150px;
+      @include mobile {
+        width: 110px;
+      }
     }
-  }
-  .shops {
-    padding: 5px;
-    @include link-container;
-    .shop {
-      @include inline-link;
+    .shops {
+      padding: 5px;
+      @include link-container;
+      .shop {
+        @include inline-link;
+      }
     }
-  }
-  .block-header {
-    text-align: center;
-    @include mini-header;
   }
   .shops-block {
     width: 100%;
     padding: 5px;
     background-color: $bg-normal;
     &.half {
-      width: calc(50% - 2px);
+      width: calc((100% - 2px) / 2);
       @include tablet {
         width: 100%;
       }
+    }
+    .block-header {
+      @include block-header;
     }
     .search-content {
       padding-top: 5px;
@@ -243,11 +203,11 @@ h2 {
       padding-top: 5px;
       li {
         padding: 1px 0;
-        color: $text-darker;
+        color: $text-dark;
         a {
           transition: .2s;
           @include hover {
-            color: $text-hovered;
+            color: $text-normal;
           }
         }
       }

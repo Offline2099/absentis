@@ -1,0 +1,68 @@
+@use 'base' as *;
+
+@mixin page {
+  width: 100%;
+  padding-top: 50px;
+  animation: fade-in 1s;
+  @include mobile {
+    padding-top: 0;
+  }
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+  width: min(1000px, 100% - 20px);
+  height: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: $bg-transparent;
+  @include mobile {
+    width: calc(100% - 10px);
+    padding: 5px;
+  }
+}
+
+@mixin page-block {
+  border-radius: 6px;
+  background-color: $bg-normal;
+  color: $text-normal;
+}
+
+@mixin block-header {
+  padding: 2px 10px;
+  background-color: $bg-bright;
+  text-align: center;
+  font-size: 18px;
+  font-variant: small-caps;
+  .label {
+    font-size: smaller;
+  }
+  @include mobile {
+    font-size: 16px;
+  }
+}
+
+@mixin link-container {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 3px 4px;
+}
+
+@mixin inline-link {
+  padding: 1px 7px;
+  border-radius: 4px;
+  background-color: $bg-bright;
+  color: $text-dark;
+  text-shadow: .5px .5px $bg-transparent;
+  transition: .2s;
+  @include inset-shadow;
+  @include hover {
+    color: $text-normal;
+    filter: brightness(1.1);
+  }
+  @include mobile {
+    padding: 0 5px 1px 5px;
+  }
+}

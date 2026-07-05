@@ -8,22 +8,13 @@
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
+  min-height: calc(100vh + 50px);
   @include column;
 }
 
-.column-content {
-  margin-bottom: 80px;
-  color: $text-normal;
-  letter-spacing: 0.02em;
-  animation: fade-in 1s;
-  & > * {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    white-space-collapse: collapse;
-  }
-}
+//=============================================================================
+//  Navigation Buttons
+//=============================================================================
 
 .navigation {
   display: flex;
@@ -51,9 +42,17 @@
     background-color: $bg-normal;
     color: $text-darker;
     font-size: 16px;
-    letter-spacing: .03em;
+    letter-spacing: .05em;
     transition: .2s;
     cursor: pointer;
+    @include inset-shadow;
+    @include hover {
+      color: $text-dark;
+    }
+    @include mobile {
+      width: 106px;
+      font-size: 14px;
+    }
     &.no-transitions {
       transition: none;
     }
@@ -67,19 +66,34 @@
         line-height: .5;
       }
     }
-    @include hover {
-      color: $text-dark;
-    }
-    @include mobile {
-      width: 106px;
-      font-size: 14px;
-    }
   }
 }
+
+//=============================================================================
+//  Content Wrapper
+//=============================================================================
+
+.column-content {
+  margin-bottom: 80px;
+  color: $text-normal;
+  letter-spacing: 0.02em;
+  animation: fade-in 1s;
+  & > * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+//=============================================================================
+//  Header
+//=============================================================================
 
 hgroup {
   margin-bottom: 80px !important;
   text-align: center;
+  @include mobile {
+    margin-top: 30px !important;
+  }
   div {
     font-family: 'Philosopher', sans-serif;
     font-size: 20px;
@@ -104,21 +118,29 @@ hgroup {
   }
 }
 
+//=============================================================================
+//  Subheaders & Paragraphs
+//=============================================================================
+
 h3 {
   margin: 25px 0 15px 0 !important;
   color: $text-dark;
-  font-size: 16px;
   text-align: center;
+  font-size: 16px;
   font-weight: 600;
   @include mobile {
-    font-size: 14px;
     margin: 20px 0 10px 0 !important;
+    font-size: 14px;
   }
 }
 
 p {
   padding: 0 5px;
 }
+
+//=============================================================================
+//  Common Inline Elements
+//=============================================================================
 
 sup {
   margin-left: .25em;
@@ -141,6 +163,10 @@ b {
   font-weight: 600;
 }
 
+//=============================================================================
+//  Quotes & Epigraphs
+//=============================================================================
+
 .quote {
   margin-left: 20px;
   padding: 6px 10px 7px 10px;
@@ -154,6 +180,9 @@ b {
       &:last-child {
         margin-bottom: 0;
       }
+    }
+    p {
+      padding: 0;
     }
     .quote {
       margin-left: 10px;
@@ -196,45 +225,43 @@ b {
   }
 }
 
-.video-container {
+//=============================================================================
+//  Images & Videos
+//=============================================================================
+
+@mixin media-container {
   display: flex;
   justify-content: center;
-  .video-wrapper {
+  .media-wrapper {
     display: flex;
     flex-wrap: wrap;
     max-width: calc(100% - 20px);
-    aspect-ratio: 16 / 9;
     padding: 5px;
     border: 1px solid $border-dark;
     border-radius: 6px;
     background-color: $bg-normal;
   }
+  img,
   iframe {
     flex: 1 0 100%;
     max-width: 100%;
-    max-height: 100%;
     border-radius: 4px;
   }
-  caption {
+  caption,
+  figcaption {
     flex: 1; 
     width: min-content;
     padding: 8px 5px 3px 5px;
     text-align: center;
+    font-size: 15px;
+    @include mobile {
+      font-size: 13px;
+    }
   }
 }
 
 figure {
-  display: flex;
-  justify-content: center;
-  .image-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: calc(100% - 20px);
-    padding: 5px;
-    border: 1px solid $border-dark;
-    border-radius: 6px;
-    background-color: $bg-normal;
-  }
+  @include media-container;
   &.to-left {
     float: left;
     margin: 0 !important;
@@ -249,31 +276,31 @@ figure {
       float: none;
     }
   }
-  img {
-    flex: 1 0 100%;
-    max-width: 100%;
-    border-radius: 4px;
-  }
-  figcaption {
-    flex: 1; 
-    width: min-content;
-    padding: 8px 5px 3px 5px;
-    text-align: center;
-    font-size: 15px;
-    @include mobile {
-      font-size: 13px;
-    }
+}
+
+.video-container {
+  @include media-container;
+  iframe {
+    aspect-ratio: 16 / 9;
   }
 }
+
+//=============================================================================
+//  Separators
+//=============================================================================
 
 .separator {
   text-align: center;
 }
 
 .line {
-  margin: 25px 0 !important;
-  @include line;
+  margin: 50px 0 25px 0 !important;
+  @include line(2px, 50px, $border-normal);
 }
+
+//=============================================================================
+//  Attributions
+//=============================================================================
 
 .attribution {
   text-align: right;
@@ -291,16 +318,34 @@ figure {
   }
 }
 
+//=============================================================================
+//  References
+//=============================================================================
+
 ul {
   list-style-type: none;
   padding: 0 5px 0 15px;
-  color: $text-dark;
+  color: $text-normal;
   font-size: 14px;
   li {
+    position: relative;
     display: flex;
     gap: 10px;
-    margin: 2px 0;
+    margin-bottom: 8px;
     border-radius: 4px;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      width: 100%;
+      @include line(1px, 20px, $border-faint);
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+      &:after {
+        display: none;
+      }
+    }
     &.selected {
       background-color: $bg-normal;
     }
@@ -308,6 +353,7 @@ ul {
       flex-shrink: 0;
       text-align: right;
       width: 2em;
+      color: $text-dark;
     }
   }
   @include mobile {

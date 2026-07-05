@@ -4,7 +4,7 @@
 
     <!-- Data -->
     <div class="book-data-container">
-      <div>
+      <div class="book-data-column">
         <img class="cover" src="img/books/{{ book.id }}.webp" [alt]="book.title" />
         @if (book.googleBooksURL) {
           <div class="link-container">
@@ -13,9 +13,9 @@
               <img class="icon" src="img/icons/external-link.svg" alt="" />
             </a>
           </div>
-        }        
+        }
       </div>
-      <div class="book-data">
+      <div class="book-data-column right">
         <table>
           <tr>
             <th>Автор</th>
@@ -36,13 +36,10 @@
 
     <!-- Chapters -->
     @if (book.chapters && book.chapters.length > 0) {
-      <h2>
-        <ng-container>Отдельные главы</ng-container>
-        <div class="underline"></div>
-      </h2>
+      <h2>Отдельные главы</h2>
       <div class="book-chapters">
         @for (chapter of book.chapters; track chapter.id) {
-          <a class="chapter" [routerLink]="chapter.id" draggable="false">
+          <a class="card-horizontal" [routerLink]="chapter.id" draggable="false">
             <img src="img/books/{{ book.id }}/{{ chapter.id }}.webp" alt="" />
             <div class="card-data">
               <div class="caption">{{ chapter.caption }}</div>
@@ -55,30 +52,35 @@
 
     <!-- Related Videos -->
     @if (book.relatedVideos && book.relatedVideos.length > 0) {
-      <h2>
-        <ng-container>Видео</ng-container>
-        <div class="underline"></div>
-      </h2>
+      <h2>Видео</h2>
       @for (video of book.relatedVideos; track $index) {
         <div class="video-container">
           <div class="video-data">
             <div class="video-header">
               {{ video.name }}
               @if (video.year) {
-                <span>({{ video.year }})</span>
+                <span class="label">({{ video.year }})</span>
               }
             </div>
             <div>{{ video.description }}</div>
           </div>
           <iframe
             width="560"
-            height="315"
             [src]="videoURL()[video.url]"
             title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
             referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
+            allowfullscreen
+          >
           </iframe>
         </div>
       }
@@ -86,10 +88,7 @@
 
     <!-- Shops -->
     @if (book.shops) {
-      <h2>
-        <ng-container>Где купить</ng-container>
-        <div class="underline"></div>
-      </h2>
+      <h2>Где купить</h2>
       <div class="shops-container">
         @if (book.shops.byCountry.length > 0) {
           @for (country of book.shops.byCountry; track $index) {

@@ -4,11 +4,7 @@
 </header>
 
 @if (contentList(); as contentList) {
-  <h2>
-    <ng-container>Книги</ng-container>
-    <div class="underline"></div>
-  </h2>
-
+  <h2>Книги</h2>
   <div class="wrapper">
     @for (book of contentList.books; track book.id) {
       <a class="book-container" [routerLink]="book.id" draggable="false">
@@ -20,17 +16,12 @@
       </a>
     }
   </div>
-  
-  <h2>
-    <ng-container>Материалы</ng-container>
-    <div class="underline"></div>
-  </h2>
-
+  <h2>Материалы</h2>
   <div class="wrapper">
     @for (material of contentList.materials; track material.id) {
       <a class="material-container" [routerLink]="material.id" draggable="false">
         <img src="img/materials/{{ material.id }}.webp" [alt]="material.title" />
-        <div class="card-data">{{ material.title }}</div>    
+        <div class="card-data">{{ material.title }}</div>
       </a>
     }
   </div>

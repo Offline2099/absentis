@@ -5,7 +5,7 @@
   flex-direction: column;
   width: 100%;
   background: url('../../public/img/bg/wheat.webp');
-  background-size: 25%;
+  background-size: 740px;
   @include desktop-small {
     background-size: 30%;
   }
@@ -19,7 +19,7 @@
 
 main {
   display: flex;
-  min-height: calc(100vh);
+  min-height: 100vh;
 }
 
 footer {
@@ -28,8 +28,8 @@ footer {
   padding: 30px 10px;
   background: url('../../public/img/bg/wheat-pattern.webp');
   background-size: 180px;
-  box-shadow: 0 0 3px 3px black;
   color: $text-dark;
   text-align: center;
-  letter-spacing: 0.03em;
+  letter-spacing: .03em;
+  @include layout-shadow;
 }

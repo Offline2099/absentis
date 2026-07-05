@@ -1,0 +1,101 @@
+@use 'base' as *;
+
+@mixin card {
+  position: relative;
+  border-radius: 6px;
+  color: $text-normal;
+  background-color: $bg-normal;
+  text-shadow: .5px .5px black;
+  transition: .2s;
+  &:after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 8px;
+    outline: 2px solid $border-dark;
+    pointer-events: none;
+    transition: .2s;
+  }
+  @include hover {
+    color: $text-hovered;
+    filter: brightness(1.1);
+    &:after {
+      outline-color: $border-hovered;
+    }
+    * {
+      color: $text-hovered !important;
+    }
+  }
+  img {
+    display: block;
+  }
+  .card-data {
+    background: linear-gradient(
+      135deg,
+      $bg-normal 0%,
+      $bg-bright 40%,
+      $bg-bright 60%,
+      $bg-normal 100%
+    );
+  }
+}
+
+@mixin card-vertical {
+  @include card;
+  img {
+    border-radius: 6px 6px 0 0;
+  }
+  .card-data {
+    border-top: 1px solid black;
+    border-radius: 0 0 6px 6px;
+  }
+}
+
+@mixin card-horizontal {
+  @include card;
+  &:after {
+    outline-width: 1px;
+  }
+  img {
+    flex-shrink: 0;
+    border-radius: 6px 0 0 6px;
+  }
+  .card-data {
+    flex-grow: 1;
+    border-left: 1px solid black;
+    border-radius: 0 6px 6px 0;
+  }
+}
+
+@mixin card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 10px 15px;
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+  .card-horizontal {
+    display: flex;
+    @include card-horizontal;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    .card-data {
+      padding: 5px 5px 5px 10px;
+      letter-spacing: 0.03em;
+      .caption {
+        margin-bottom: 5px;
+        color: $text-dark;
+        font-size: 15px;
+      }
+    }
+  }
+}

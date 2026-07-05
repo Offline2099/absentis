@@ -1,0 +1,32 @@
+@use 'sass:color';
+@use 'colors' as *;
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin no-scroll-bar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  border-radius: 50%;
+  @include square($size);
+}
+
+@mixin inset-shadow {
+  box-shadow: 0 0 1px 1px color.adjust($border-dark, $alpha: -0.75) inset;
+}

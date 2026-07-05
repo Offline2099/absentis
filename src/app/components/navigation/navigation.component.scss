@@ -1,98 +1,111 @@
-@use 'sass:color';
 @use '../../../scss' as *;
 
-.nav-bar,
-.nav-button,
-.nav-panel,
 .blocker {
   position: fixed;
-}
-
-.nav-bar {
-  z-index: 1002;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  padding-right: 50px;
-  background: linear-gradient(
-    $bg-bright 0, $bg-normal 5%, 
-    $bg-normal 95%, $bg-bright
-  );
-  box-shadow: 0 0 2px 2px black;
-  color: $text-darker;
-  transform-origin: top;
-  animation: nav-bar-appear .5s;
-  & > * {
-    animation: fade-in .2s .5s both;
-  }
-  a {
-    display: block;
-    margin: 0 10px;
-    padding: 2px 10px;
-    border-radius: 6px;
-    background-color: $bg-bright;
-    box-shadow: 0 0 1px 1px color.adjust($border-dark, $alpha: -0.75) inset;
-    transition: .2s;
-    img {
-      display: block;
-      width: 60px;
-      height: 40px;
-    }
-    @include hover {
-      filter: brightness(1.1);
-    }
-  }
-  span {
-    user-select: none;
-  }
-  @include mobile {
-    display: none;
-  }
-}
-
-@keyframes nav-bar-appear {
-  0% {
-    transform: scaleY(0);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-
-.nav-button {
-  z-index: 1003;
-  top: 5px;
-  right: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border: 2px solid $border-dark;
-  border-radius: 50%;
-  background-color: $bg-bright;
-  cursor: pointer;
-  img {
-    width: 28px;
-    height: 28px;
-    animation: fade-in .3s;
-  }
-}
-
-.blocker {
-  z-index: 1000;
+  z-index: $blocker-z-index;
   width: 100%;
   height: 100%;
   background-color: $bg-transparent;
   animation: fade-in .5s;
 }
 
+//=============================================================================
+//  Navigation Bar
+//=============================================================================
+
+.nav-bar {
+  position: fixed;
+  z-index: $nav-bar-z-index;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: $nav-bar-height;
+  padding-right: calc($nav-button-size + 20px);
+  background: linear-gradient(
+    $bg-bright 0, $bg-normal 5%, 
+    $bg-normal 95%, $bg-bright
+  );
+  color: $text-dark;
+  transform-origin: top;
+  animation: grow-vertical .5s;
+  @include layout-shadow;
+  @include mobile {
+    display: none;
+  }
+  & > * {
+    animation: fade-in .2s .5s both;
+  }
+  .link {
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+    margin: 0 10px;
+    padding: 2px 10px;
+    border-radius: 6px;
+    background-color: $bg-bright;
+    font-weight: 500;
+    line-height: 1.2;
+    text-shadow: .5px .5px $bg-transparent;
+    transition: .2s;
+    @include inset-shadow;
+    @include hover {
+      filter: brightness(1.1);
+    }
+    .home-icon {
+      display: block;
+      width: 60px;
+      height: 40px;
+    }
+  }
+  .separator {
+    user-select: none;
+  }
+}
+
+//=============================================================================
+//  Navigation Button
+//=============================================================================
+
+.nav-button {
+  position: fixed;
+  z-index: $nav-button-z-index;
+  top: 5px;
+  left: calc(100vw - $nav-button-size - 22px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $border-dark;
+  background-color: $bg-bright;
+  transition: filter .2s;
+  cursor: pointer;
+  @include circle($nav-button-size);
+  @include inset-shadow;
+  @include hover {
+    filter: brightness(1.1);
+  }
+  @include mobile {
+    left: calc(100vw - $nav-button-size - 8px);
+  }
+  .icon {
+    animation: fade-in .3s;
+    @include square(26px);
+  }
+}
+
+//=============================================================================
+//  Navigation Panel
+//=============================================================================
+
+// Panel position cannot be set with 'right' as it causes a visible jump when
+// body-scroll-block removes the scroll bar. The solution here is to set it
+// with 'left' and use transition on both position and width.
+
 .nav-panel {
-  z-index: 1001;
+  position: fixed;
+  z-index: $nav-panel-z-index;
   top: 0;
-  right: -5px;
+  left: calc(100vw + $nav-panel-offset);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -101,61 +114,76 @@
   padding: 0 0 50px 0;
   border-left: 4px solid $border-dark;
   background: url('../../../../public/img/bg/wheat-pattern.webp');
+  background-size: 180px;
   color: $text-normal;
   transition: .5s;
+  transition-property: width, padding;
+  transition-delay: .2s;
   overflow-y: scroll;
   @include no-scroll-bar;
   @include mobile {
     border-left: none;
   }
+  &.in-progress {
+    transition-property: width, left, padding;
+  }
+  &.open {
+    left: calc(100vw + $nav-panel-offset - $nav-panel-width);
+    width: $nav-panel-width;
+    padding: 0 20px 50px 15px;
+    transition-delay: unset;
+    @include tablet {
+      left: calc(100vw + $nav-panel-offset - $nav-panel-width-tablet);
+      width: $nav-panel-width-tablet;
+    }
+    @include mobile {
+      left: calc(100vw + $nav-panel-offset - $nav-panel-width-mobile);
+      width: $nav-panel-width-mobile;
+    }
+    & > * {
+      opacity: 1;
+      transition-delay: .5s;
+    }
+  }
   & > * {
     opacity: 0;
     transition: .2s;
   }
-  &.open {
-    width: 600px;
-    padding: 0 20px 50px 15px;
-    transition-delay: .2s;
-    & > * {
-      opacity: 1;
-      transition: .2s;
-      transition-delay: .5s;
-    }
-    @include tablet {
-      width: 580px;
-    }
-    @include mobile {
-      width: calc(100% + 5px);
-    }
+}
+
+//=============================================================================
+//  Navigation Panel Content
+//=============================================================================
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  height: $nav-bar-height;
+  margin-right: calc($nav-button-size + 10px);
+  font-family: 'Philosopher', sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.03em;
+  @include tablet {
+    font-size: 26px;
   }
-  h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    height: 50px;
-    margin-right: 50px;
-    font-family: 'Philosopher', sans-serif;
-    font-size: 30px;
-    letter-spacing: 0.03em;
-    @include tablet {
-      font-size: 26px;
-    }
-    @include mobile {
-      font-size: 22px;
-    }
+  @include mobile {
+    font-size: 22px;
   }
-  h3 {
-    margin-top: 20px;
-    font-size: 24px;
-    @include subheader;
-    @include desktop-small {
-      font-size: 22px;
-    }
-    @include tablet {
-      margin-top: 10px;
-      font-size: 18px;
-    }
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 24px;
+  @include subheader;
+  @include desktop-small {
+    font-size: 22px;
+  }
+  @include tablet {
+    margin-top: 10px;
+    font-size: 18px;
   }
 }
 
@@ -163,8 +191,11 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  text-shadow: .5px .5px $bg-transparent;
   .entity-header {
     font-size: 18px;
+    font-weight: 500;
+    font-variant: small-caps;
     letter-spacing: 0.02em;
     @include mobile {
       font-size: 16px;
@@ -172,12 +203,32 @@
   }
   .entity-content {
     display: flex;
-    display: flex;
     flex-direction: column;
     padding-left: 15px;
     font-size: 16px;
     @include mobile {
       font-size: 14px;
+    }
+    & > * {
+      position: relative;
+      margin-bottom: 6px;
+      text-indent: 5px;
+      &:after {
+        content: '';
+        position: absolute;
+        left: -15px;
+        bottom: -5px;
+        width: calc(100% + 15px);
+        @include line(1px, 20px, $border-faint);
+      }
+      &:last-of-type {
+        &:after {
+          display: none;
+        }
+      }
+      @include mobile {
+        text-indent: 0;
+      }
     }
   }
   a {

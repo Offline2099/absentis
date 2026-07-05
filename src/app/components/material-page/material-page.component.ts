@@ -15,7 +15,7 @@ export class MaterialPageComponent {
   material: Signal<Material | null>;
 
   constructor(private route: ActivatedRoute) {
-    this.material = toSignal(this.route.data.pipe(map(data => data['material'])));
+    this.material = toSignal(this.route.data.pipe(map(data => data['entity'])));
   }
 
 }

@@ -1,14 +1,15 @@
-import { Component, Signal, signal} from '@angular/core';
+import { Component, ElementRef, Signal, signal, viewChild} from '@angular/core';
 import { NgClass } from '@angular/common';
 import { Router, RouterLink, NavigationEnd, Route } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { filter, map, tap } from 'rxjs';
+import { filter, map, take, tap, timer } from 'rxjs';
+import * as BodyScrollLock from 'body-scroll-lock';
 import { ContentList } from '../../types/content-list.interface';
 import { Book } from '../../types/book/book.interface';
 import { Material } from '../../types/material/material.interface';
 import { BookChapter } from '../../types/book/book-chapter.interface';
 import { MaterialPart } from '../../types/material/material-part.interface';
-import { DataFetchService } from '../../services/data-fetch.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: '[app-navigation]',
@@ -21,10 +22,12 @@ export class NavigationComponent {
   contentList: Signal<ContentList | null>;
   isMainPage: Signal<boolean>;
   isPanelOpen = signal<boolean>(false);
-  primary = signal<Book | Material | null>(null);
-  secondary= signal<BookChapter | MaterialPart | null>(null);
+  isActionInProgress = signal<boolean>(false);
+  scrollTarget = viewChild.required<ElementRef>('scrollTarget');
+  entity = signal<Book | Material | null>(null);
+  article = signal<BookChapter | MaterialPart | null>(null);
 
-  constructor(private router: Router, private data: DataFetchService) {
+  constructor(private router: Router, private data: DataService) {
     this.contentList = this.data.contentList;
     this.isMainPage = toSignal(
       this.router.events.pipe(
@@ -40,15 +43,34 @@ export class NavigationComponent {
   }
 
   setPageParams(url: string): void {
-    const currentURL = url.substring(1);
-    const route: Route | undefined = this.router.config.find(route => route.path === currentURL);
+    const currentUrl = url.substring(1);
+    const route: Route | undefined = this.router.config.find(route => route.path === currentUrl);
     if (!route?.data) return;
-    this.primary.set(route.data['book'] || route.data['material'] || null);
-    this.secondary.set(route.data['chapter'] || route.data['part'] || null);
+    this.entity.set(route.data['entity'] || null);
+    this.article.set(route.data['article'] || null);
   }
 
   togglePanel(): void {
+    if (this.isActionInProgress()) return;
+    this.isActionInProgress.set(true);
     this.isPanelOpen.update(value => !value);
+    this.isPanelOpen() ? this.disableBodyScroll() : this.enableBodyScroll();
+    timer(500).pipe(take(1)).subscribe(() => this.isActionInProgress.set(false));
+  }
+
+  disableBodyScroll(): void {
+    BodyScrollLock.disableBodyScroll(
+      this.scrollTarget().nativeElement,
+      { reserveScrollBarGap: true }
+    );
+  }
+
+  enableBodyScroll(): void {
+    BodyScrollLock.enableBodyScroll(this.scrollTarget().nativeElement);
+  }
+
+  ngOnDestroy(): void {
+    BodyScrollLock.clearAllBodyScrollLocks();
   }
 
 }

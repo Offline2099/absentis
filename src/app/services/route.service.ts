@@ -3,11 +3,11 @@ import { Router, Route } from '@angular/router';
 import { ContentList } from '../types/content-list.interface';
 import { Book } from '../types/book/book.interface';
 import { Material } from '../types/material/material.interface';
+import { BookChapter } from '../types/book/book-chapter.interface';
+import { MaterialPart } from '../types/material/material-part.interface';
 import { BookPageComponent } from '../components/book-page/book-page.component';
 import { MaterialPageComponent } from '../components/material-page/material-page.component';
 import { ArticleComponent } from '../components/article/article.component';
-import { BookChapter } from '../types/book/book-chapter.interface';
-import { MaterialPart } from '../types/material/material-part.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +34,7 @@ export class RouteService {
       {
         path: book.id,
         component: BookPageComponent,
-        data: { book }   
+        data: { entity: book }   
       },
       ...book.chapters.map(chapter => this.chapterRoute(book, chapter))
     ];
@@ -44,7 +44,7 @@ export class RouteService {
     return {
       path: `${book.id}/${chapter.id}`,
       component: ArticleComponent,
-      data: { book, chapter }
+      data: { entity: book, article: chapter }
     };
   }
 
@@ -53,7 +53,7 @@ export class RouteService {
       {
         path: material.id,
         component: MaterialPageComponent,
-        data: { material }
+        data: { entity: material }
       },
       ...material.parts.map(part => this.partRoute(material, part))
     ];
@@ -63,7 +63,7 @@ export class RouteService {
     return {
       path: `${material.id}/${part.id}`,
       component: ArticleComponent,
-      data: { material, part }
+      data: { entity: material, article: part }
     };
   }
 

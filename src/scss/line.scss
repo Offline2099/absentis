@@ -1,0 +1,32 @@
+@use 'base' as *;
+
+@mixin line($height, $tail, $color) {
+  width: 100%;
+  height: $height;
+  background: linear-gradient(
+    90deg,
+    transparent 0,
+    $color $tail,
+    $color calc(100% - $tail),
+    transparent 100%
+  );
+  @include mobile {
+    height: 1px;
+  }
+}
+
+@mixin subheader {
+  position: relative;
+  padding-bottom: 4px;
+  color: $text-darker;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include line(2px, 50px, $border-normal);
+  }
+}

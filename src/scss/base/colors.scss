@@ -1,7 +1,7 @@
 @use 'sass:color';
 
 $text-normal: tan;
-$text-dark: burlywood;
+$text-dark: #d3a15f;
 $text-darker: peru;
 $text-hovered: orange;
 $text-selected: honeydew;
@@ -12,5 +12,7 @@ $bg-transparent: color.adjust(tan, $lightness: -65%, $alpha: -0.25);
 $bg-selection: teal;
 
 $border-normal: peru;
+$border-bright: tan;
 $border-dark: color.adjust($border-normal, $lightness: -20%);
 $border-hovered: darkorange;
+$border-faint: color.adjust($border-bright, $alpha: -0.8);

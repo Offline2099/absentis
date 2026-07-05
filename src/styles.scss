@@ -1,6 +1,7 @@
 @use 'scss' as *;
 
-html, body {
+html,
+body {
   scroll-behavior: smooth;
 }
 
@@ -8,6 +9,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  background-color: black;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;

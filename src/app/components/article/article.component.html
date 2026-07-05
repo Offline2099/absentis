@@ -1,16 +1,16 @@
 <div class="column">
 
+  <!-- Navigation (Page Top) -->
   <ng-template
     [ngTemplateOutlet]="nav"
-    [ngTemplateOutletContext]="{ 
-      entityId: articleData?.entityId(),
-      previousId: articleData?.previousId(),
-      nextId: articleData?.nextId()
+    [ngTemplateOutletContext]="{
+      entityId: articleData?.entityId,
+      previousId: articleData?.previousId,
+      nextId: articleData?.nextId
     }"
   />
 
   <div class="column-content">
-
     @if (articleData?.article(); as article) {
 
       <!-- Header -->
@@ -25,29 +25,24 @@
       @for (element of article.content; track $index) {
         @switch (element.type) {
 
+          <!-- Subheader -->
           @case (ArticleElement.subheader) {
             <h3>
-              <ng-template 
-                [ngTemplateOutlet]="text" 
-                [ngTemplateOutletContext]="{ content: element.content }" 
+              <ng-template
+                [ngTemplateOutlet]="text"
+                [ngTemplateOutletContext]="{ content: element.content }"
               />
             </h3>
           }
 
           <!-- Paragraph -->
           @case (ArticleElement.paragraph) {
-            <ng-template 
-              [ngTemplateOutlet]="paragraph" 
-              [ngTemplateOutletContext]="{ element }" 
-            />
+            <ng-template [ngTemplateOutlet]="paragraph" [ngTemplateOutletContext]="{ element }" />
           }
 
           <!-- Quote -->
           @case (ArticleElement.quote || ArticleElement.epigraph) {
-            <ng-template 
-              [ngTemplateOutlet]="quote" 
-              [ngTemplateOutletContext]="{ element }" 
-            />
+            <ng-template [ngTemplateOutlet]="quote" [ngTemplateOutletContext]="{ element }" />
           }
 
           <!-- Epigraph -->
@@ -55,17 +50,17 @@
             <blockquote class="epigraph">
               @for (part of element.content; track $index) {
                 <div>
-                  <ng-template 
-                    [ngTemplateOutlet]="text" 
-                    [ngTemplateOutletContext]="{ content: part }" 
+                  <ng-template
+                    [ngTemplateOutlet]="text"
+                    [ngTemplateOutletContext]="{ content: part }"
                   />
                 </div>
               }
               @if (element.author) {
                 <div class="author">
-                  <ng-template 
-                    [ngTemplateOutlet]="text" 
-                    [ngTemplateOutletContext]="{ content: element.author }" 
+                  <ng-template
+                    [ngTemplateOutlet]="text"
+                    [ngTemplateOutletContext]="{ content: element.author }"
                   />
                 </div>
               }
@@ -74,18 +69,18 @@
 
           <!-- Image -->
           @case (ArticleElement.image) {
-            <figure 
-              [ngClass]="{ 
+            <figure
+              [ngClass]="{
                 'to-left': element.position === ImagePosition.left,
                 'to-right': element.position === ImagePosition.right
               }">
-              <div class="image-wrapper">
+              <div class="media-wrapper">
                 <img [src]="element.url" [alt]="element.alt || ''" />
                 @if (element.caption) {
                   <figcaption>
-                    <ng-template 
-                      [ngTemplateOutlet]="text" 
-                      [ngTemplateOutletContext]="{ content: element.caption }" 
+                    <ng-template
+                      [ngTemplateOutlet]="text"
+                      [ngTemplateOutletContext]="{ content: element.caption }"
                     />
                   </figcaption>
                 }
@@ -96,22 +91,30 @@
           <!-- Video -->
           @case (ArticleElement.video) {
             <div class="video-container">
-              <div class="video-wrapper">
+              <div class="media-wrapper">
                 <iframe
                   width="560"
-                  height="315"
                   [src]="videoURL()[element.url]"
                   title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
                   referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen>
+                  allowfullscreen
+                >
                 </iframe>
                 @if (element.caption) {
                   <caption>
-                    <ng-template 
-                      [ngTemplateOutlet]="text" 
-                      [ngTemplateOutletContext]="{ content: element.caption }" 
+                    <ng-template
+                      [ngTemplateOutlet]="text"
+                      [ngTemplateOutletContext]="{ content: element.caption }"
                     />
                   </caption>
                 }
@@ -129,9 +132,9 @@
             <div class="attribution">
               @for (part of element.content; track $index) {
                 <div>
-                  <ng-template 
-                    [ngTemplateOutlet]="text" 
-                    [ngTemplateOutletContext]="{ content: part }" 
+                  <ng-template
+                    [ngTemplateOutlet]="text"
+                    [ngTemplateOutletContext]="{ content: part }"
                   />
                 </div>
               }
@@ -143,14 +146,14 @@
             <div class="line"></div>
             <ul class="reference-list">
               @for (reference of element.content; track reference.id) {
-                <li 
+                <li
                   id="reference-{{ reference.id }}"
                   [ngClass]="{ 'selected': reference.id === selectedReferenceId() }">
                   <div class="reference-id">{{ reference.text || reference.id + '.' }}</div>
                   <div>
-                    <ng-template 
-                      [ngTemplateOutlet]="text" 
-                      [ngTemplateOutletContext]="{ content: reference.content }" 
+                    <ng-template
+                      [ngTemplateOutlet]="text"
+                      [ngTemplateOutletContext]="{ content: reference.content }"
                     />
                   </div>
                 </li>
@@ -160,18 +163,17 @@
         }
       }
     }
-
   </div>
 
+  <!-- Navigation (Page Bottom) -->
   <ng-template
     [ngTemplateOutlet]="nav"
-    [ngTemplateOutletContext]="{ 
-      entityId: articleData?.entityId(),
-      previousId: articleData?.previousId(),
-      nextId: articleData?.nextId()
+    [ngTemplateOutletContext]="{
+      entityId: articleData?.entityId,
+      previousId: articleData?.previousId,
+      nextId: articleData?.nextId
     }"
   />
-
 </div>
 
 <!-- Template: Navigation -->
@@ -184,7 +186,7 @@
       </button>
     </a>
     <a [routerLink]="['/', entityId, nextId]" [ngClass]="{ 'disabled': nextId === null }">
-      <button type="button" [ngClass]="{ 'no-transitions': noTransitions() }" >
+      <button type="button" [ngClass]="{ 'no-transitions': noTransitions() }">
         <div class="arrow">&rarr;</div>
         <div>Следующая</div>
       </button>
@@ -201,17 +203,17 @@
       @switch (element.type) {
         @case (InlineElement.italic) {
           <i>
-            <ng-template 
-              [ngTemplateOutlet]="text" 
-              [ngTemplateOutletContext]="{ content: element.text }" 
+            <ng-template
+              [ngTemplateOutlet]="text"
+              [ngTemplateOutletContext]="{ content: element.text }"
             />
           </i>
         }
         @case (InlineElement.bold) {
           <b>
-            <ng-template 
-              [ngTemplateOutlet]="text" 
-              [ngTemplateOutletContext]="{ content: element.text }" 
+            <ng-template
+              [ngTemplateOutlet]="text"
+              [ngTemplateOutletContext]="{ content: element.text }"
             />
           </b>
         }
@@ -233,9 +235,9 @@
 <!-- Template: Paragaraph -->
 <ng-template #paragraph let-element="element">
   <p>
-    <ng-template 
-      [ngTemplateOutlet]="text" 
-      [ngTemplateOutletContext]="{ content: element.content }" 
+    <ng-template
+      [ngTemplateOutlet]="text"
+      [ngTemplateOutletContext]="{ content: element.content }"
     />
   </p>
 </ng-template>
@@ -245,35 +247,29 @@
   <blockquote class="quote" [ngClass]="{ 'complex': element.complexContent }">
     @for (part of element.content; track $index) {
       <div>
-        <ng-template 
-          [ngTemplateOutlet]="text" 
-          [ngTemplateOutletContext]="{ content: part }" 
-        />
+        <ng-template [ngTemplateOutlet]="text" [ngTemplateOutletContext]="{ content: part }" />
       </div>
     }
     @if (element.complexContent) {
       @for (part of element.complexContent; track $index) {
         @switch (part.type) {
           @case (ArticleElement.paragraph) {
-            <ng-template 
-              [ngTemplateOutlet]="paragraph" 
+            <ng-template
+              [ngTemplateOutlet]="paragraph"
               [ngTemplateOutletContext]="{ element: part }"
             />
           }
           @case (ArticleElement.quote) {
-            <ng-template 
-              [ngTemplateOutlet]="quote" 
-              [ngTemplateOutletContext]="{ element: part }"
-            />
+            <ng-template [ngTemplateOutlet]="quote" [ngTemplateOutletContext]="{ element: part }" />
           }
         }
       }
     }
     @if (element.author) {
       <div class="author">
-        <ng-template 
-          [ngTemplateOutlet]="text" 
-          [ngTemplateOutletContext]="{ content: element.author }" 
+        <ng-template
+          [ngTemplateOutlet]="text"
+          [ngTemplateOutletContext]="{ content: element.author }"
         />
       </div>
     }

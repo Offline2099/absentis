@@ -1,0 +1,17 @@
+@use 'base' as *;
+
+$blocker-z-index: 1000;
+$nav-panel-z-index: $blocker-z-index + 1;
+$nav-bar-z-index: $blocker-z-index + 2;
+$nav-button-z-index: $blocker-z-index + 3;
+
+$nav-bar-height: 50px;
+$nav-button-size: 40px;
+$nav-panel-offset: 5px;
+$nav-panel-width: 600px;
+$nav-panel-width-tablet: 580px;
+$nav-panel-width-mobile: calc(100% + $nav-panel-offset);
+
+@mixin layout-shadow {
+  box-shadow: 0 0 2px 2px black;
+}

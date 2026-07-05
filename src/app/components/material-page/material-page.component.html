@@ -1,9 +1,8 @@
 <div class="column">
-
   <div class="parts">
     @if (material(); as material) {
       @for (part of material.parts; track part.id) {
-        <a class="material-part" [routerLink]="part.id" draggable="false">
+        <a class="card-horizontal" [routerLink]="part.id" draggable="false">
           <img src="img/materials/{{ material.id }}/{{ part.id }}.webp" alt="" />
           <div class="card-data">
             <div>{{ part.title }}</div>
@@ -12,5 +11,4 @@
       }
     }
   </div>
-
 </div>
